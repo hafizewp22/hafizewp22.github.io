@@ -3,7 +3,7 @@
     "role": "Full Stack Engineer",
     "company": "PT. Purwanto Asset Management",
     "location": "Jakarta, Indonesia",
-    "start": "Jul 2023",
+    "start": "Jul 2024",
     "end": "Present",
     "summary": "Built attendance & leave, meeting room booking, KPI evaluation, QR‑verified document workflows; implemented nasabah (client) data module and mutual fund in/out transaction features with access control, OTP & audit trail; automated data + document management (Golang, VueJS, MySQL, Python).",
     "technologies": ["Golang", "VueJS", "MySQL", "REST API", "Python", "Client Data", "Mutual Fund Transactions", "OTP", "Access Control", "Audit Trail"],
