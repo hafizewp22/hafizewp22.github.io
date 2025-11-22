@@ -1,14 +1,14 @@
 [
   {
-    "name": "Purwanto",
+    "name": "PT. Purwanto Asset Management",
     "logo": "https://purwanto.co.id/img/purwanto_logo.webp",
-    "alt": "Purwanto Logo",
+    "alt": "PT. Purwanto Asset Management Logo",
     "link": "https://purwanto.co.id"
   },
   {
-    "name": "Poris Indah",
+    "name": "SMA Poris Indah",
     "logo": "https://www.porisindah.sch.id/assets/front/img/porisindah1.jpg",
-    "alt": "Poris Indah School",
+    "alt": "SMA Poris Indah Logo",
     "link": "https://www.porisindah.sch.id"
   },
   {
@@ -18,14 +18,21 @@
     "link": "https://vida.id"
   },
   {
-    "name": "Company",
+    "name": "PT. Digerati Atomic Indonesia",
     "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQjb_YQbHVEcpU28pPE5gN9Mguw-h96Dud62w&s",
-    "alt": "Company Logo"
+    "alt": "PT. Digerati Atomic Indonesia Logo",
+    "link": "https://atomic.id"
   },
   {
-    "name": "Polman Babel",
+    "name": "Telkom Indonesia",
     "logo": "https://polman-babel.ac.id/uploads/mitra/1639378395_4580a3809e6829ce3bbc.png",
-    "alt": "Polman Babel Logo",
-    "link": "https://polman-babel.ac.id"
+    "alt": "Telkom Indonesia Logo",
+    "link": "https://www.telkom.co.id/"
+  },
+  {
+    "name": "wedo Collection",
+    "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRKcZIff7zhV1p3IxFzYJzJKVu7iJUVTJBR5A&s",
+    "alt": "wedo Collection Logo",
+    "link": ""
   }
 ]
