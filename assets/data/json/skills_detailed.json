@@ -1,0 +1,11 @@
+[
+  { "name": "HTML", "level": "Intermediate", "endorsements": 12 },
+  { "name": "CSS", "level": "Intermediate", "endorsements": 10 },
+  { "name": "PHP", "level": "Intermediate", "endorsements": 9 },
+  { "name": "Laravel", "level": "Intermediate", "endorsements": 8 },
+  { "name": "JavaScript", "level": "Basic", "endorsements": 6 },
+  { "name": "ReactJS", "level": "Basic", "endorsements": 4 },
+  { "name": "MySQL / SQL", "level": "Intermediate", "endorsements": 11 },
+  { "name": "Python", "level": "Basic", "endorsements": 5 },
+  { "name": "Figma", "level": "Intermediate", "endorsements": 7 }
+]

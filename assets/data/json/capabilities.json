@@ -1,0 +1,22 @@
+[
+  {
+    "title": "Web Development",
+    "description": "Modern, accessible, responsive websites and dashboards using clean, maintainable code.",
+    "iconClass": "uil uil-brackets-curly"
+  },
+  {
+    "title": "Mobile & Hybrid",
+    "description": "Prototype and build mobile app experiences focusing on usability & performance.",
+    "iconClass": "uil uil-mobile-android"
+  },
+  {
+    "title": "Data & Database",
+    "description": "Design structured schemas, integrate APIs, and transform data for insights.",
+    "iconClass": "uil uil-database"
+  },
+  {
+    "title": "UI / UX",
+    "description": "Create clear interface flows, component systems, and pixel-consistent layouts.",
+    "iconClass": "uil uil-palette"
+  }
+]

@@ -1,0 +1,89 @@
+[
+  {
+    "title": "Front-End",
+    "iconClass": "uil uil-window",
+    "items": [
+      {"name": "HTML5", "level": "Advanced"},
+      {"name": "CSS", "level": "Advanced"},
+      {"name": "JavaScript", "level": "Intermediate"},
+      {"name": "jQuery", "level": "Intermediate"},
+      {"name": "ReactJS", "level": "Intermediate"},
+      {"name": "VueJS", "level": "Intermediate"},
+      {"name": "Tailwind CSS", "level": "Intermediate"},
+      {"name": "Bootstrap", "level": "Advanced"},
+      {"name": "Node.js", "level": "Basic"}
+    ]
+  },
+  {
+    "title": "Back-End",
+    "iconClass": "uil uil-server",
+    "items": [
+      {"name": "PHP", "level": "Intermediate"},
+      {"name": "Laravel", "level": "Intermediate"},
+      {"name": "Golang", "level": "Intermediate"},
+      {"name": "Node.js", "level": "Basic"}
+    ]
+  },
+  {
+    "title": "Databases",
+    "iconClass": "uil uil-database",
+    "items": [
+      {"name": "MySQL", "level": "Intermediate"},
+      {"name": "PostgreSQL", "level": "Basic"},
+      {"name": "SQL Server", "level": "Basic"},
+      {"name": "Oracle Database", "level": "Basic"},
+      {"name": "Database Design", "level": "Intermediate"}
+    ]
+  },
+  {
+    "title": "Programming Languages",
+    "iconClass": "uil uil-code",
+    "items": [
+      {"name": "Java", "level": "Basic"},
+      {"name": "C", "level": "Basic"},
+      {"name": "C++", "level": "Basic"},
+      {"name": "Python", "level": "Basic"},
+      {"name": "Golang", "level": "Intermediate"}
+    ]
+  },
+  {
+    "title": "Operating Systems",
+    "iconClass": "uil uil-desktop",
+    "items": [
+      {"name": "Windows", "level": "Experienced"},
+      {"name": "Linux (Ubuntu)", "level": "Intermediate"},
+      {"name": "MacOS", "level": "Basic"}
+    ]
+  },
+  {
+    "title": "Tools & Platforms",
+    "iconClass": "uil uil-wrench",
+    "items": [
+      {"name": "Figma", "level": "Intermediate"},
+      {"name": "Docker", "level": "Basic"},
+      {"name": "Postman API", "level": "Intermediate"},
+      {"name": "Git", "level": "Intermediate"},
+      {"name": "GitHub", "level": "Intermediate"},
+      {"name": "GitLab", "level": "Basic"},
+      {"name": "Trello", "level": "Intermediate"},
+      {"name": "Jira", "level": "Intermediate"}
+    ]
+  },
+  {
+    "title": "Professional Skills",
+    "iconClass": "uil uil-users-alt",
+    "items": [
+      {"name": "Teamwork", "level": "Strong"},
+      {"name": "Time Management", "level": "Strong"},
+      {"name": "Leadership", "level": "Developing"}
+    ]
+  },
+  {
+    "title": "Languages",
+    "iconClass": "uil uil-comment-dots",
+    "items": [
+      {"name": "Indonesian", "level": "Fluent"},
+      {"name": "English", "level": "Elementary"}
+    ]
+  }
+]

@@ -1,0 +1,31 @@
+[
+  {
+    "name": "Purwanto",
+    "logo": "https://purwanto.co.id/img/purwanto_logo.webp",
+    "alt": "Purwanto Logo",
+    "link": "https://purwanto.co.id"
+  },
+  {
+    "name": "Poris Indah",
+    "logo": "https://www.porisindah.sch.id/assets/front/img/porisindah1.jpg",
+    "alt": "Poris Indah School",
+    "link": "https://www.porisindah.sch.id"
+  },
+  {
+    "name": "VIDA",
+    "logo": "https://vida.id/hs-fs/hubfs/VIDA_2023-09.png?width=240&height=62&name=VIDA_2023-09.png",
+    "alt": "VIDA Logo",
+    "link": "https://vida.id"
+  },
+  {
+    "name": "Company",
+    "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQjb_YQbHVEcpU28pPE5gN9Mguw-h96Dud62w&s",
+    "alt": "Company Logo"
+  },
+  {
+    "name": "Polman Babel",
+    "logo": "https://polman-babel.ac.id/uploads/mitra/1639378395_4580a3809e6829ce3bbc.png",
+    "alt": "Polman Babel Logo",
+    "link": "https://polman-babel.ac.id"
+  }
+]

@@ -1,0 +1,72 @@
+[
+  {
+    "title": "Web Development Path (Node.js)",
+    "description": "Join a 3-day workshop whose theme is Online Website Builder with Progate.",
+    "image": "assets/img/Certificate4.png"
+  },
+  {
+    "title": "Java (Basic)",
+    "description": "Covers fundamental Java topics: classes, data structures, inheritance, exceptions.",
+    "image": "assets/img/Certificate5.png"
+  },
+  {
+    "title": "Java (Basic)",
+    "description": "It covers basic topics in Java such as classes, data structures, inheritance, exception handling (Java 7/8).",
+    "image": "assets/img/Certificate5.png"
+  },
+  {
+    "title": "Problem Solving (Basic)",
+    "description": "Data Structures (Arrays, Strings) and Algorithms (Sorting, Searching).",
+    "image": "assets/img/Certificate6.png"
+  },
+  {
+    "title": "IC3 GS5 Key Applications (Office 2016)",
+    "description": "Microsoft Office 2016 expertise certification in IC3 GS5 Key Application.",
+    "image": "assets/img/Certificate7.png"
+  },
+  {
+    "title": "SQL (Basic)",
+    "description": "Simple queries, relationships, and aggregators.",
+    "image": "assets/img/Certificate10.png"
+  },
+  {
+    "title": "Training - Database Design and Programming with SQL",
+    "description": "Digital Talent Scholarship (FGA) 2021 project: bookstore database design & implementation.",
+    "image": "assets/img/Certificate13.png"
+  },
+  {
+    "title": "Database Design at Oracle Academy",
+    "description": "Materials, quizzes and exams about database design documentation.",
+    "image": "assets/img/Certificate15.png"
+  },
+  {
+    "title": "Database Programming with SQL at Oracle Academy",
+    "description": "Classifying data and simplifying data identification & display using SQL.",
+    "image": "assets/img/Certificate14.png"
+  },
+  {
+    "title": "Learn to Code with Python",
+    "description": "Beginner to professional course: 400+ videos covering Python fundamentals.",
+    "image": "assets/img/Certificate17.png"
+  },
+  {
+    "title": "HTML Course - Sololearn",
+    "description": "Hands-on exercises building web pages with HTML.",
+    "image": "assets/img/Certificate19.png"
+  },
+  {
+    "title": "React - The Complete Guide (incl Hooks, React Router, Redux)",
+    "description": "React.js from scratch: Hooks, Redux, Routing, Animations, Next.js and more.",
+    "image": "assets/img/Certificate21.png"
+  },
+  {
+    "title": "React (Basic)",
+    "description": "Basic Routing, Rendering Elements, Component State, Events, ES6, Form Validation.",
+    "image": "assets/img/Certificate21.png"
+  },
+  {
+    "title": "Scalable Web Services with Golang (Hacktiv8 DTS)",
+    "description": "Training scholarship: Go language, OOP, Testing, PostgreSQL, Middleware, scalable services.",
+    "image": "assets/img/Certificate20.png"
+  }
+]

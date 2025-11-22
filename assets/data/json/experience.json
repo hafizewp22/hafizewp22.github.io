@@ -1,0 +1,42 @@
+[
+  {
+    "role": "Full Stack Engineer",
+    "company": "PT. Purwanto Asset Management",
+    "location": "Jakarta, Indonesia",
+    "start": "Jul 2023",
+    "end": "Present",
+    "summary": "Built attendance & leave, meeting room booking, KPI evaluation, QR‑verified document workflows; implemented nasabah (client) data module and mutual fund in/out transaction features with access control, OTP & audit trail; automated data + document management (Golang, VueJS, MySQL, Python).",
+    "technologies": ["Golang", "VueJS", "MySQL", "REST API", "Python", "Client Data", "Mutual Fund Transactions", "OTP", "Access Control", "Audit Trail"],
+    "logo": "https://media.licdn.com/dms/image/v2/D560BAQEr-CqqJUeDZw/company-logo_200_200/company-logo_200_200/0/1701674683019/purwanto_asset_management_logo?e=1765411200&v=beta&t=lwdbaVtzomd5kX_UhF-Tdpv66TZ1y-aU3ivFBgKd1gw"
+  },
+  {
+    "role": "Programmer (Contract)",
+    "company": "PT. Purwanto Asset Management",
+    "location": "Jakarta, Indonesia",
+    "start": "Jan 2024",
+    "end": "Jul 2024",
+    "summary": "Expanded website (careers, webinars, blogs, products); built RDO app for client (nasabah) data, in/out mutual fund transactions, and multi‑source validation (VIDA, Bloomberg) with OTP & data security controls.",
+    "technologies": ["Google Analytics", "Golang", "MySQL", "VIDA API", "Bloomberg Data", "Python", "OTP", "Data Validation"],
+    "logo": "https://media.licdn.com/dms/image/v2/D560BAQEr-CqqJUeDZw/company-logo_200_200/company-logo_200_200/0/1701674683019/purwanto_asset_management_logo?e=1765411200&v=beta&t=lwdbaVtzomd5kX_UhF-Tdpv66TZ1y-aU3ivFBgKd1gw"
+  },
+  {
+    "role": "Software Engineer (Contract)",
+    "company": "PT. Digerati Atomic Indonesia",
+    "location": "Tangerang, Indonesia",
+    "start": "Jun 2023",
+    "end": "Sep 2023",
+    "summary": "Delivered SIP feature updates; integrated PostgreSQL + Golang services; improved Laravel front‑end & back‑end components.",
+    "technologies": ["Laravel", "PHP", "PostgreSQL", "Golang"],
+    "logo": "https://media.licdn.com/dms/image/v2/D4E0BAQFEpfr_15NwDA/company-logo_200_200/company-logo_200_200/0/1725352821056/atomicindonesia_logo?e=1765411200&v=beta&t=V0DW4CsxuzGKzBlfXpLbkDn5Meq7DjD6b26GkUdml-A"
+  },
+  {
+    "role": "Web Developer Intern",
+    "company": "Telkom Indonesia",
+    "location": "Jakarta, Indonesia",
+    "start": "Mar 2022",
+    "end": "Feb 2023",
+    "summary": "Enhanced SIIS & IBAM React apps, integrated ArcGIS data, built Microdemand Survey CMS front‑end.",
+    "technologies": ["ReactJS", "ArcGIS", "JavaScript", "REST API"],
+    "logo": "https://media.licdn.com/dms/image/v2/C4D0BAQGVLh28SyAv-g/company-logo_200_200/company-logo_200_200/0/1631315215307?e=1765411200&v=beta&t=Rd4_YsfJh28mXOm3_DWO4IvZMzGRHS0R8j0sEgSTHVQ"
+  }
+]
