@@ -291,7 +291,8 @@ async function initDynamicSections(){
         { path: 'assets/data/json/brands.json',                 render: renderBrands,         selector: '#brands-track',           name: 'brands'         },
         { path: 'assets/data/json/career/qualification.json',   render: renderQualification,  selector: '#education',              name: 'qualification'  },
         { path: 'assets/data/json/achievements/sports.json',   render: renderSports,         selector: '#running-wrapper',        name: 'sports'         },
-        { path: 'assets/data/json/achievements/strava.json',   render: renderStrava,         selector: '#strava-stats',           name: 'strava'         }
+        { path: 'assets/data/json/achievements/strava.json',   render: renderStrava,         selector: '#strava-stats',           name: 'strava'         },
+        { path: 'assets/data/json/about/hackerrank.json',      render: renderHackerRank,     selector: '#hr-widget',              name: 'hackerrank'     }
     ];
     const results = await Promise.allSettled(tasks.map(t => loadJSON(t.path)));
     let anySuccess = false;
@@ -609,6 +610,44 @@ function renderBrands(data){
 }
 
 /*==================== SPORTS / RUNNING ====================*/
+function renderHackerRank(data){
+    const wrap = document.getElementById('hr-widget');
+    if(!wrap) return;
+    const levelColor = { Basic: '#00BFA5', Intermediate: '#F9A825', Advanced: '#E53935' };
+    const badgesHTML = data.badges.map(b => `
+        <div class="hr_badge">
+            <i class="uil ${b.icon} hr_badge_icon"></i>
+            <span>${b.name}</span>
+        </div>`).join('');
+    const certsHTML = data.certifications.map(c => `
+        <span class="hr_cert" style="--cert-color:${levelColor[c.level] || '#00BFA5'}">
+            ${c.name} <em>${c.level}</em>
+        </span>`).join('');
+    wrap.innerHTML = `
+        <div class="hr_header">
+            <img src="https://hrcdn.net/fcore/assets/brand/logo-new-white-green-a5cb16a0f4.svg"
+                 class="hr_logo" alt="HackerRank" onerror="this.outerHTML='<span class=\'hr_logo_text\'>HackerRank</span>'"/>
+            <div class="hr_header_info">
+                <span class="hr_username">@${data.username}</span>
+                <span class="hr_title">${data.title}</span>
+            </div>
+            <a class="hr_profile_link" href="${data.profileUrl}" target="_blank" rel="noopener">
+                View Profile <i class="uil uil-external-link-alt"></i>
+            </a>
+        </div>
+        <div class="hr_body">
+            <div class="hr_section">
+                <h4 class="hr_section_label"><i class="uil uil-award"></i> Badges</h4>
+                <div class="hr_badges">${badgesHTML}</div>
+            </div>
+            <div class="hr_section">
+                <h4 class="hr_section_label"><i class="uil uil-medal"></i> Certifications <span class="hr_cert_count">${data.certifications.length} Verified</span></h4>
+                <div class="hr_certs">${certsHTML}</div>
+            </div>
+        </div>
+    `;
+}
+
 function renderStrava(data){
     const wrap = document.getElementById('strava-stats');
     if(!wrap) return;

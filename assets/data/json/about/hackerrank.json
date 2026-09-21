@@ -1,0 +1,28 @@
+{
+  "username": "hafizewp",
+  "profileUrl": "https://www.hackerrank.com/profile/hafizewp",
+  "title": "Web Developer",
+  "badges": [
+    { "name": "Problem Solving", "icon": "uil-puzzle-piece" },
+    { "name": "SQL",             "icon": "uil-database" },
+    { "name": "Go",              "icon": "uil-brackets-curly" },
+    { "name": "Java",            "icon": "uil-java" },
+    { "name": "C++",             "icon": "uil-brackets-curly" },
+    { "name": "C",               "icon": "uil-code" },
+    { "name": "Days of Code",    "icon": "uil-fire" }
+  ],
+  "certifications": [
+    { "name": "Problem Solving", "level": "Basic" },
+    { "name": "Go",              "level": "Basic" },
+    { "name": "Go",              "level": "Intermediate" },
+    { "name": "C",               "level": "Basic" },
+    { "name": "C",               "level": "Intermediate" },
+    { "name": "C",               "level": "Advanced" },
+    { "name": "C++",             "level": "Basic" },
+    { "name": "Java",            "level": "Basic" },
+    { "name": "SQL",             "level": "Basic" },
+    { "name": "JavaScript",      "level": "Basic" },
+    { "name": "React",           "level": "Basic" },
+    { "name": "CSS",             "level": "Basic" }
+  ]
+}
