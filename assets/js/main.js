@@ -53,7 +53,8 @@ async function setLang(lang) {
 }
 
 async function initI18n() {
-    const saved = localStorage.getItem('lang') || 'en';
+    const browserLang = navigator.language.startsWith('id') ? 'id' : 'en';
+    const saved = localStorage.getItem('lang') || browserLang;
     await setLang(saved);
 }
 
