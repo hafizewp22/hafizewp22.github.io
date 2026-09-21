@@ -1,3 +1,55 @@
+/*==================== I18N ====================*/
+let _t = {};
+let _lang = 'en';
+const _dataCache = {};
+
+function t(key, fallback) {
+    return _t[key] !== undefined ? _t[key] : (fallback !== undefined ? fallback : key);
+}
+
+function applyStaticTranslations() {
+    document.querySelectorAll('[data-i18n]').forEach(el => {
+        const v = _t[el.dataset.i18n];
+        if (v !== undefined) el.textContent = v;
+    });
+    document.querySelectorAll('[data-i18n-html]').forEach(el => {
+        const v = _t[el.dataset.i18nHtml];
+        if (v !== undefined) el.innerHTML = v;
+    });
+}
+
+async function setLang(lang) {
+    if (!['en', 'id'].includes(lang)) lang = 'en';
+    try {
+        const r = await fetch(`assets/data/json/i18n/${lang}.json`);
+        _t = await r.json();
+    } catch(e) { _t = {}; }
+    _lang = lang;
+    localStorage.setItem('lang', lang);
+    document.documentElement.lang = lang;
+    const btn = document.getElementById('lang-toggle');
+    if (btn) btn.textContent = lang === 'en' ? 'ID' : 'EN';
+    applyStaticTranslations();
+    // Re-render JS-driven sections that have cached data
+    if (_dataCache.strava)       renderStrava(_dataCache.strava);
+    if (_dataCache.sports)       renderSports(_dataCache.sports);
+    if (_dataCache.github)       renderGitHub(_dataCache.github);
+    if (_dataCache.hackerrank)   renderHackerRank(_dataCache.hackerrank);
+    if (_dataCache.competitions) renderCompetitions(_dataCache.competitions);
+    if (_dataCache.research)     renderResearch(_dataCache.research);
+}
+
+async function initI18n() {
+    const saved = localStorage.getItem('lang') || 'en';
+    await setLang(saved);
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    document.getElementById('lang-toggle')?.addEventListener('click', () => {
+        setLang(_lang === 'en' ? 'id' : 'en');
+    });
+});
+
 /*==================== MENU SHOW Y HIDDEN ====================*/
 const navMenu = document.getElementById('nav-menu'),
       navToggle = document.getElementById('nav-toggle'),
@@ -279,6 +331,7 @@ function renderExperience(data){
 }
 
 async function initDynamicSections(){
+    await initI18n();
     const tasks = [
         { path: 'assets/data/json/career/experience.json',      render: renderExperience,    selector: '#experience-container',   name: 'experience'     },
         { path: 'assets/data/json/about/skills.json',           render: renderSkills,         selector: '#skills-cards',           name: 'skills'         },
@@ -290,25 +343,26 @@ async function initDynamicSections(){
         { path: 'assets/data/json/achievements/events.json',    render: renderEvents,         selector: '#events-wrapper',         name: 'events'         },
         { path: 'assets/data/json/brands.json',                 render: renderBrands,         selector: '#brands-track',           name: 'brands'         },
         { path: 'assets/data/json/career/qualification.json',   render: renderQualification,  selector: '#education',              name: 'qualification'  },
-        { path: 'assets/data/json/achievements/sports.json',   render: renderSports,         selector: '#running-wrapper',        name: 'sports'         },
-        { path: 'assets/data/json/achievements/strava.json',   render: renderStrava,         selector: '#strava-stats',           name: 'strava'         },
-        { path: 'assets/data/json/about/hackerrank.json',      render: renderHackerRank,     selector: '#hr-widget',              name: 'hackerrank'     },
-        { path: 'https://api.github.com/users/hafizewp22',    render: renderGitHub,         selector: '#github-widget',          name: 'github'         }
+        { path: 'assets/data/json/achievements/sports.json',    render: renderSports,         selector: '#running-wrapper',        name: 'sports'         },
+        { path: 'assets/data/json/achievements/strava.json',    render: renderStrava,         selector: '#strava-stats',           name: 'strava'         },
+        { path: 'assets/data/json/about/hackerrank.json',       render: renderHackerRank,     selector: '#hr-widget',              name: 'hackerrank'     },
+        { path: 'https://api.github.com/users/hafizewp22',      render: renderGitHub,         selector: '#github-widget',          name: 'github'         }
     ];
-    const results = await Promise.allSettled(tasks.map(t => loadJSON(t.path)));
+    const results = await Promise.allSettled(tasks.map(task => loadJSON(task.path)));
     let anySuccess = false;
     const loaded = {}; // store successful datasets for stats aggregation
     results.forEach((res, i) => {
-        const t = tasks[i];
+        const task = tasks[i];
         if (res.status === 'fulfilled') {
-            loaded[t.name] = res.value;
-            try { t.render(res.value); anySuccess = true; } catch(renderErr){
-                console.error('Render error for '+t.name, renderErr);
-                setFallback(t.selector, 'Render error');
+            loaded[task.name] = res.value;
+            _dataCache[task.name] = res.value;
+            try { task.render(res.value); anySuccess = true; } catch(renderErr){
+                console.error('Render error for '+task.name, renderErr);
+                setFallback(task.selector, 'Render error');
             }
         } else {
-            console.warn('Failed to load '+t.name+':', res.reason.message || res.reason);
-            setFallback(t.selector, 'Failed to load '+t.name);
+            console.warn('Failed to load '+task.name+':', res.reason.message || res.reason);
+            setFallback(task.selector, 'Failed to load '+task.name);
         }
     });
     updateStats(loaded);
@@ -487,10 +541,10 @@ function renderCompetitions(data){
     if(!wrap) return;
     const rankIcon = desc => {
         const d = desc.toLowerCase();
-        if(d.includes('1st')||d.includes('first')||d.includes('gold')) return {icon:'uil-trophy',cls:'award--gold',label:'1st Place'};
-        if(d.includes('2nd')||d.includes('second')||d.includes('silver')) return {icon:'uil-trophy',cls:'award--silver',label:'2nd Place'};
-        if(d.includes('3rd')||d.includes('third')||d.includes('bronze')) return {icon:'uil-medal',cls:'award--bronze',label:'3rd Place'};
-        return {icon:'uil-award',cls:'award--participant',label:'Participant'};
+        if(d.includes('1st')||d.includes('first')||d.includes('gold')) return {icon:'uil-trophy',cls:'award--gold',label:t('competition.rank1','1st Place')};
+        if(d.includes('2nd')||d.includes('second')||d.includes('silver')) return {icon:'uil-trophy',cls:'award--silver',label:t('competition.rank2','2nd Place')};
+        if(d.includes('3rd')||d.includes('third')||d.includes('bronze')) return {icon:'uil-medal',cls:'award--bronze',label:t('competition.rank3','3rd Place')};
+        return {icon:'uil-award',cls:'award--participant',label:t('competition.participant','Participant')};
     };
     wrap.innerHTML = data.map(c => {
         const rank = rankIcon(c.description);
@@ -503,7 +557,7 @@ function renderCompetitions(data){
             <div class="award_body">
                 <h3 class="award_title">${c.title}</h3>
                 <p class="award_desc">${c.description}</p>
-                ${c.link ? `<a href="${c.link}" target="_blank" class="award_link"><i class="uil uil-external-link-alt"></i> View Certificate</a>` : ''}
+                ${c.link ? `<a href="${c.link}" target="_blank" class="award_link"><i class="uil uil-external-link-alt"></i> ${t('competition.viewCert','View Certificate')}</a>` : ''}
             </div>
         </div>`;
     }).join('');
@@ -526,14 +580,14 @@ function renderResearch(data){
             </div>
             <div class="research_paper_body">
                 <div class="research_paper_meta">
-                    <span class="research_tag"><i class="uil uil-book-open"></i> Research Paper</span>
+                    <span class="research_tag"><i class="uil uil-book-open"></i> ${t('research.tag','Research Paper')}</span>
                     ${r.year ? `<span class="research_year">${r.year}</span>` : ''}
                     ${publisherHTML}
                 </div>
                 <h3 class="research_paper_title">${r.title}</h3>
                 <p class="research_paper_desc">${r.description}</p>
                 ${authorsHTML}
-                ${r.link ? `<a href="${r.link}" target="_blank" class="research_link">Read Full Paper <i class="uil uil-arrow-right"></i></a>` : ''}
+                ${r.link ? `<a href="${r.link}" target="_blank" class="research_link">${t('research.readMore','Read Full Paper')} <i class="uil uil-arrow-right"></i></a>` : ''}
             </div>
         </div>`;
     }).join('');
@@ -650,32 +704,32 @@ async function renderGitHub(data){
                 ${data.bio ? `<span class="gh_dot">·</span><span class="gh_bio">${data.bio}</span>` : ''}
             </div>
             <a class="gh_profile_link" href="${data.html_url}" target="_blank" rel="noopener">
-                View Profile <i class="uil uil-external-link-alt"></i>
+                ${t('gh.viewProfile','View Profile')} <i class="uil uil-external-link-alt"></i>
             </a>
         </div>
         <div class="gh_body">
             <div class="gh_stat">
                 <span class="gh_stat_val">${data.public_repos}</span>
-                <span class="gh_stat_key">Repositories</span>
+                <span class="gh_stat_key">${t('gh.repositories','Repositories')}</span>
             </div>
             <div class="gh_stat_divider"></div>
             <div class="gh_stat">
                 <span class="gh_stat_val">${data.followers}</span>
-                <span class="gh_stat_key">Followers</span>
+                <span class="gh_stat_key">${t('gh.followers','Followers')}</span>
             </div>
             <div class="gh_stat_divider"></div>
             <div class="gh_stat">
                 <span class="gh_stat_val">${data.following}</span>
-                <span class="gh_stat_key">Following</span>
+                <span class="gh_stat_key">${t('gh.following','Following')}</span>
             </div>
             <div class="gh_stat_divider"></div>
             <div class="gh_stat">
                 <span class="gh_stat_val">${joined}</span>
-                <span class="gh_stat_key">Joined</span>
+                <span class="gh_stat_key">${t('gh.joined','Joined')}</span>
             </div>
         </div>
         <div class="gh_repos" id="gh-repos-list">
-            <span class="gh_repos_loading">Loading repositories…</span>
+            <span class="gh_repos_loading">${t('gh.loading','Loading repositories…')}</span>
         </div>
     `;
     try {
@@ -731,16 +785,16 @@ function renderHackerRank(data){
                 <span class="hr_title">${data.title}</span>
             </div>
             <a class="hr_profile_link" href="${data.profileUrl}" target="_blank" rel="noopener">
-                View Profile <i class="uil uil-external-link-alt"></i>
+                ${t('hr.viewProfile','View Profile')} <i class="uil uil-external-link-alt"></i>
             </a>
         </div>
         <div class="hr_body">
             <div class="hr_section">
-                <h4 class="hr_section_label"><i class="uil uil-award"></i> Badges</h4>
+                <h4 class="hr_section_label"><i class="uil uil-award"></i> ${t('hr.badges','Badges')}</h4>
                 <div class="hr_badges">${badgesHTML}</div>
             </div>
             <div class="hr_section">
-                <h4 class="hr_section_label"><i class="uil uil-medal"></i> Certifications <span class="hr_cert_count">${data.certifications.length} Verified</span></h4>
+                <h4 class="hr_section_label"><i class="uil uil-medal"></i> ${t('hr.certifications','Certifications')} <span class="hr_cert_count">${data.certifications.length} ${t('hr.verified','Verified')}</span></h4>
                 <div class="hr_certs">${certsHTML}</div>
             </div>
         </div>
@@ -758,27 +812,27 @@ function renderStrava(data){
     wrap.innerHTML = `
         <div class="strava_stat_card">
             <span class="strava_stat_val">${all.count}</span>
-            <span class="strava_stat_key">Total Runs</span>
+            <span class="strava_stat_key">${t('strava.totalRuns','Total Runs')}</span>
         </div>
         <div class="strava_stat_card">
             <span class="strava_stat_val">${km(all.distance)} <small>km</small></span>
-            <span class="strava_stat_key">Total Distance</span>
+            <span class="strava_stat_key">${t('strava.totalDistance','Total Distance')}</span>
         </div>
         <div class="strava_stat_card">
             <span class="strava_stat_val">${Math.round(all.elevation_gain)} <small>m</small></span>
-            <span class="strava_stat_key">Total Elevation</span>
+            <span class="strava_stat_key">${t('strava.totalElevation','Total Elevation')}</span>
         </div>
         <div class="strava_stat_card strava_stat_card--accent">
             <span class="strava_stat_val">${ytd.count}</span>
-            <span class="strava_stat_key">Runs This Year</span>
+            <span class="strava_stat_key">${t('strava.runsYear','Runs This Year')}</span>
         </div>
         <div class="strava_stat_card strava_stat_card--accent">
             <span class="strava_stat_val">${km(ytd.distance)} <small>km</small></span>
-            <span class="strava_stat_key">Distance This Year</span>
+            <span class="strava_stat_key">${t('strava.distanceYear','Distance This Year')}</span>
         </div>
         <div class="strava_stat_card strava_stat_card--accent">
             <span class="strava_stat_val">${recent.count}</span>
-            <span class="strava_stat_key">Runs (4 Weeks)</span>
+            <span class="strava_stat_key">${t('strava.runsRecent','Runs (4 Weeks)')}</span>
         </div>
     `;
 }
@@ -800,7 +854,7 @@ function renderSports(data){
                 <div class="run_bib">#${r.bibNumber}</div>
             </div>
             <div class="run_time_wrap">
-                <span class="run_time_label">Finish Time</span>
+                <span class="run_time_label">${t('run.finishTime','Finish Time')}</span>
                 <span class="run_time">${r.finishTime}</span>
                 <span class="run_pace">${r.pace}</span>
             </div>
@@ -808,21 +862,21 @@ function renderSports(data){
                 <div class="run_stat">
                     <span class="run_stat_val">${r.overallRank}</span>
                     <span class="run_stat_label">of ${r.overallTotal}</span>
-                    <span class="run_stat_key">Overall</span>
+                    <span class="run_stat_key">${t('run.overall','Overall')}</span>
                 </div>
                 <div class="run_stat_divider"></div>
                 <div class="run_stat">
                     <span class="run_stat_val">${r.genderRank}</span>
                     <span class="run_stat_label">of ${r.genderTotal}</span>
-                    <span class="run_stat_key">Gender</span>
+                    <span class="run_stat_key">${t('run.gender','Gender')}</span>
                 </div>
             </div>
             <div class="run_links">
                 <button class="run_btn run_btn--cert" onclick="openPdfModal('${r.event}','${r.certificateUrl}')">
-                    <i class="uil uil-file-alt"></i> Certificate
+                    <i class="uil uil-file-alt"></i> ${t('run.certificate','Certificate')}
                 </button>
                 <a class="run_btn run_btn--result" href="${r.resultUrl}" target="_blank" rel="noopener">
-                    <i class="uil uil-chart-bar"></i> Results
+                    <i class="uil uil-chart-bar"></i> ${t('run.results','Results')}
                 </a>
             </div>
         </div>`;

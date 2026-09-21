@@ -105,6 +105,25 @@ body.dark-theme{
     color: var(--first-color);
 }
 
+.lang_toggle{
+    background: none;
+    border: 1.5px solid var(--first-color);
+    color: var(--first-color);
+    font-size: .65rem;
+    font-weight: 700;
+    padding: .2rem .45rem;
+    border-radius: 4px;
+    cursor: pointer;
+    letter-spacing: .06em;
+    line-height: 1;
+    margin-right: var(--mb-1);
+    transition: background .2s, color .2s;
+}
+.lang_toggle:hover{
+    background: var(--first-color);
+    color: #fff;
+}
+
 /*==================== BASE ====================*/
 *{
     box-sizing: border-box;

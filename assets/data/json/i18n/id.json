@@ -1,0 +1,121 @@
+{
+  "nav.home": "Beranda",
+  "nav.about": "Tentang",
+  "nav.skill": "Keahlian",
+  "nav.project": "Proyek",
+  "nav.portfolio": "Portofolio ▾",
+  "nav.capabilities": "Kemampuan",
+  "nav.experience": "Pengalaman",
+  "nav.competition": "Kompetisi",
+  "nav.research": "Penelitian",
+  "nav.certificate": "Sertifikat",
+  "nav.running": "Lari",
+
+  "home.cta": "Hubungi Saya",
+  "home.scroll": "Gulir ke bawah",
+
+  "about.title": "Tentang Saya",
+  "about.subtitle": "Perkenalan",
+  "about.text": "Saya adalah Software & Web Developer dengan pengalaman <strong>3+ tahun</strong> di berbagai proyek fintech, telekomunikasi, dan SaaS. Saya didorong oleh integritas, tanggung jawab, dan kolaborasi dalam menyelesaikan masalah. Telah menghadirkan sistem otomatisasi absensi & cuti, modul evaluasi KPI, alur kerja verifikasi dokumen berbasis QR, pemesanan ruang rapat, dan layanan validasi data multi-sumber menggunakan Golang, Vue.js, React, Laravel, MySQL, PostgreSQL, dan REST API. Saya senang mengubah ide produk menjadi kode yang performatif dan mudah dipelihara serta mengoptimalkan aliran data. Mencari tantangan berikutnya di mana rekayasa pragmatis, antarmuka yang bersih, dan integrasi data yang andal menciptakan dampak nyata.",
+  "about.metric.experience": "Tahun Pengalaman",
+  "about.metric.companies": "Perusahaan Tempat Bekerja",
+  "about.metric.projects": "Proyek Berhasil",
+  "about.metric.hours": "Jam Coding",
+  "about.btn.about": "Tentang Saya",
+  "about.btn.cv": "Unduh CV",
+
+  "stack.title": "Teknologi Utama",
+  "stack.subtitle": "Teknologi yang saya gunakan sehari-hari",
+
+  "brands.title": "Dipercaya Brand Terkemuka",
+
+  "capabilities.title": "Kemampuan",
+  "capabilities.subtitle": "Yang Saya Kerjakan",
+
+  "experience.title": "Pengalaman",
+  "experience.subtitle": "Profesional & Organisasi",
+
+  "skills.title": "Keahlian",
+  "skills.subtitle": "Level teknis saya",
+
+  "qualification.title": "Kualifikasi",
+  "qualification.subtitle": "Perjalanan pribadi saya",
+  "qualification.tab.education": "Pendidikan",
+  "qualification.tab.organization": "Organisasi",
+  "qualification.tab.volunteering": "Sukarela",
+
+  "portfolio.title": "Proyek",
+  "portfolio.subtitle": "Karya terbaru",
+
+  "competition.title": "Kompetisi",
+  "competition.subtitle": "Pencapaian & Penghargaan",
+  "competition.rank1": "Juara 1",
+  "competition.rank2": "Juara 2",
+  "competition.rank3": "Juara 3",
+  "competition.participant": "Peserta",
+  "competition.viewCert": "Lihat Sertifikat",
+
+  "research.title": "Penelitian",
+  "research.subtitle": "Publikasi Akademik",
+  "research.tag": "Makalah Penelitian",
+  "research.readMore": "Baca Makalah Lengkap",
+
+  "blog.label": "Blog",
+  "blog.title": "Baca Blog Saya",
+  "blog.desc": "Berbagi catatan, tutorial, dan wawasan tentang IT, coding, dan pengembangan perangkat lunak.",
+  "blog.btn": "Kunjungi Blog",
+
+  "certificate.title": "Sertifikat",
+  "certificate.subtitle": "Kredensial & Pembelajaran",
+
+  "running.title": "Lari",
+  "running.subtitle": "Olahraga & Event Marathon",
+
+  "strava.label": "Statistik Strava",
+  "strava.viewProfile": "Lihat Profil",
+  "strava.totalRuns": "Total Lari",
+  "strava.totalDistance": "Total Jarak",
+  "strava.totalElevation": "Total Elevasi",
+  "strava.runsYear": "Lari Tahun Ini",
+  "strava.distanceYear": "Jarak Tahun Ini",
+  "strava.runsRecent": "Lari (4 Minggu)",
+
+  "run.finishTime": "Waktu Finish",
+  "run.overall": "Keseluruhan",
+  "run.gender": "Gender",
+  "run.certificate": "Sertifikat",
+  "run.results": "Hasil",
+
+  "contact.title": "Hubungi Saya",
+  "contact.subtitle": "Tetap terhubung",
+  "contact.email": "Email",
+  "contact.location": "Lokasi",
+  "contact.linkedin": "LinkedIn",
+  "contact.github": "GitHub",
+  "contact.copy": "Salin",
+  "contact.open": "Buka",
+  "contact.cta.title": "Ayo Berkolaborasi",
+  "contact.cta.text": "Ingin membangun proyek bersama atau membutuhkan bantuan dengan database streaming dan pengembangan web? Hubungi saya dan saya akan segera merespons.",
+  "contact.cta.btn": "Mulai Percakapan",
+
+  "gh.viewProfile": "Lihat Profil",
+  "gh.repositories": "Repositori",
+  "gh.followers": "Pengikut",
+  "gh.following": "Mengikuti",
+  "gh.joined": "Bergabung",
+  "gh.loading": "Memuat repositori…",
+
+  "hr.viewProfile": "Lihat Profil",
+  "hr.badges": "Lencana",
+  "hr.certifications": "Sertifikasi",
+  "hr.verified": "Terverifikasi",
+
+  "footer.copy": "© Hafiz E Wedo Putra. Semua hak dilindungi",
+  "footer.blog": "Blog",
+  "footer.research": "Penelitian",
+  "footer.feedback": "Masukan",
+
+  "pdf.download": "Unduh",
+  "pdf.fallback": "PDF tidak dapat ditampilkan di browser ini.",
+  "pdf.fallbackLink": "Buka / Unduh di sini"
+}

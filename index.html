@@ -28,64 +28,64 @@
                 <ul class="nav_list grid">
                     <li class="nav_item">
                         <a href="#home" class="nav_link active-link">
-                            <i class="uil uil-estate nav_icon"></i> Home
+                            <i class="uil uil-estate nav_icon"></i> <span data-i18n="nav.home">Home</span>
                         </a>
                     </li>
                     <li class="nav_item">
                         <a href="#about" class="nav_link">
-                            <i class="uil uil-user nav_icon"></i> About
+                            <i class="uil uil-user nav_icon"></i> <span data-i18n="nav.about">About</span>
                         </a>
                     </li>
                     <li class="nav_item">
                         <a href="#skills" class="nav_link">
-                            <i class="uil uil-file-alt nav_icon"></i> Skill
+                            <i class="uil uil-file-alt nav_icon"></i> <span data-i18n="nav.skill">Skill</span>
                         </a>
                     </li>
                     <li class="nav_item">
                         <a href="#project" class="nav_link">
-                            <i class="uil uil-brackets-curly nav_icon"></i> Project
+                            <i class="uil uil-brackets-curly nav_icon"></i> <span data-i18n="nav.project">Project</span>
                         </a>
                     </li>
                     <!-- Desktop dropdown (hidden on mobile); groups long list -->
                     <li class="nav_item nav_item_dropdown" aria-haspopup="true">
-                        <a href="#project" class="nav_link nav_dropdown_trigger" aria-expanded="false">Portfolio ▾</a>
+                        <a href="#project" class="nav_link nav_dropdown_trigger" aria-expanded="false"><span data-i18n="nav.portfolio">Portfolio ▾</span></a>
                         <ul class="nav_submenu" aria-label="Portfolio sections">
-                            <li><a href="#capabilities" class="nav_link nav_sub_link">Capabilities</a></li>
-                            <li><a href="#experience" class="nav_link nav_sub_link">Experience</a></li>
-                            <li><a href="#competition" class="nav_link nav_sub_link">Competition</a></li>
-                            <li><a href="#research" class="nav_link nav_sub_link">Research</a></li>
-                            <li><a href="#certificate" class="nav_link nav_sub_link">Certificate</a></li>
-                            <li><a href="#running" class="nav_link nav_sub_link">Running</a></li>
+                            <li><a href="#capabilities" class="nav_link nav_sub_link" data-i18n="nav.capabilities">Capabilities</a></li>
+                            <li><a href="#experience" class="nav_link nav_sub_link" data-i18n="nav.experience">Experience</a></li>
+                            <li><a href="#competition" class="nav_link nav_sub_link" data-i18n="nav.competition">Competition</a></li>
+                            <li><a href="#research" class="nav_link nav_sub_link" data-i18n="nav.research">Research</a></li>
+                            <li><a href="#certificate" class="nav_link nav_sub_link" data-i18n="nav.certificate">Certificate</a></li>
+                            <li><a href="#running" class="nav_link nav_sub_link" data-i18n="nav.running">Running</a></li>
                         </ul>
                     </li>
                     <li class="nav_item">
                         <a href="#capabilities" class="nav_link nav_hide-desktop">
-                            <i class="uil uil-rocket nav_icon"></i> Capabilities
+                            <i class="uil uil-rocket nav_icon"></i> <span data-i18n="nav.capabilities">Capabilities</span>
                         </a>
                     </li>
                     <li class="nav_item">
                         <a href="#experience" class="nav_link nav_hide-desktop">
-                            <i class="uil uil-briefcase-alt nav_icon"></i> Experience
+                            <i class="uil uil-briefcase-alt nav_icon"></i> <span data-i18n="nav.experience">Experience</span>
                         </a>
                     </li>
                     <li class="nav_item">
                         <a href="#competition" class="nav_link nav_hide-desktop">
-                            <i class="uil uil-trophy nav_icon"></i> Competition
+                            <i class="uil uil-trophy nav_icon"></i> <span data-i18n="nav.competition">Competition</span>
                         </a>
                     </li>
                     <li class="nav_item">
                         <a href="#research" class="nav_link nav_hide-desktop">
-                            <i class="uil uil-search-alt nav_icon"></i> Research
+                            <i class="uil uil-search-alt nav_icon"></i> <span data-i18n="nav.research">Research</span>
                         </a>
                     </li>
                     <li class="nav_item">
                         <a href="#certificate" class="nav_link nav_hide-desktop">
-                            <i class="uil uil-clipboard nav_icon"></i> Certificate
+                            <i class="uil uil-clipboard nav_icon"></i> <span data-i18n="nav.certificate">Certificate</span>
                         </a>
                     </li>
                     <li class="nav_item">
                         <a href="#running" class="nav_link nav_hide-desktop">
-                            <i class="uil uil-running nav_icon"></i> Running
+                            <i class="uil uil-running nav_icon"></i> <span data-i18n="nav.running">Running</span>
                         </a>
                     </li>
                     
@@ -99,6 +99,8 @@
             </div>
 
             <div class="nav_btns">
+                <!-- Language toggle -->
+                <button class="lang_toggle" id="lang-toggle" title="Switch language">ID</button>
                 <!-- Theme change button -->
                 <i class="uil uil-moon change-theme" id="theme-button"></i>
 
@@ -150,14 +152,14 @@
                         <h3 class="home_subtitle">Full Stack Developer</h3>
                         <p class="home_description">3+ years building financial & enterprise web applications using Golang, Vue.js, and MySQL. Delivered attendance systems, KPI evaluation, mutual fund transactions, and QR-verified document workflows across fintech and telecom sectors.</p>
                         <a href="#contact" class="button button--flex">
-                            Contact Me <i class="uil uil-message button_icon"></i>
+                            <span data-i18n="home.cta">Contact Me</span> <i class="uil uil-message button_icon"></i>
                         </a>
                     </div>
                 </div>
                 <div class="home_scroll">
                     <a href="#about" class="home_scroll-button button--flex">
                         <i class="uil uil-mouse-alt home_scroll-mouse"></i>
-                        <span class="home_scroll-name">Scroll down</span>
+                        <span class="home_scroll-name" data-i18n="home.scroll">Scroll down</span>
                         <i class="uil uil-arrow-down home_scroll-arrow"></i>
                     </a>
                 </div>
@@ -166,40 +168,40 @@
 
         <!--==================== ABOUT ====================-->
         <section class="about section" id="about">
-            <h2 class="section_title">About Me</h2>
-            <span class="section_subtitle">Introduction</span>
+            <h2 class="section_title" data-i18n="about.title">About Me</h2>
+            <span class="section_subtitle" data-i18n="about.subtitle">Introduction</span>
             <div class="about_container container about_layout">
                 <div class="about_photo">
                     <img src="assets/img/about.png" alt="Profile" class="about_photo_img" loading="lazy">
                 </div>
                 <div class="about_content">
-                    <p class="about_text">
+                    <p class="about_text" data-i18n-html="about.text">
                         I am a Software & Web Developer with <strong>3+ years</strong> hands‑on experience across fintech, telecom, and SaaS projects. I’m driven by integrity, responsibility, and collaborative problem‑solving. I have delivered attendance & leave automation, KPI evaluation modules, QR‑verified document workflows, meeting room booking, and multi‑source data validation services using Golang, Vue.js, React, Laravel, MySQL, PostgreSQL, and REST APIs. I enjoy turning product ideas into performant, maintainable code and optimizing data flows (streaming & transactional). I’m seeking the next challenge where pragmatic engineering, clean interfaces, and reliable data integration create measurable impact.
                     </p>
                     <div class="about_metrics">
                         <div class="about_metric">
                             <div class="about_metric_value">3+</div>
-                            <div class="about_metric_label">Years of Experience</div>
+                            <div class="about_metric_label" data-i18n="about.metric.experience">Years of Experience</div>
                         </div>
                         <div class="about_metric">
                             <div class="about_metric_value" id="about-companies">…</div>
-                            <div class="about_metric_label">Companies I've Worked For</div>
+                            <div class="about_metric_label" data-i18n="about.metric.companies">Companies I've Worked For</div>
                         </div>
                         <div class="about_metric">
                             <div class="about_metric_value" id="about-projects">…</div>
-                            <div class="about_metric_label">Successful Projects</div>
+                            <div class="about_metric_label" data-i18n="about.metric.projects">Successful Projects</div>
                         </div>
                         <div class="about_metric">
                             <div class="about_metric_value">4000+</div>
-                            <div class="about_metric_label">Hours Coding</div>
+                            <div class="about_metric_label" data-i18n="about.metric.hours">Hours Coding</div>
                         </div>
                     </div>
                     <div class="about_actions">
                         <a href="#about" class="about_primary_btn" aria-label="Learn more about me">
-                            <span>About Me</span>
+                            <span data-i18n="about.btn.about">About Me</span>
                             <span class="about_btn_icon"><i class="uil uil-arrow-right"></i></span>
                         </a>
-                        <a download href="assets/pdf/27 CV ATS - Hafiz Elfia Wedo Putra.pdf" class="about_secondary_btn" aria-label="Download my CV">Download CV<i class="uil uil-download-alt"></i></a>
+                        <a download href="assets/pdf/27 CV ATS - Hafiz Elfia Wedo Putra.pdf" class="about_secondary_btn" aria-label="Download my CV"><span data-i18n="about.btn.cv">Download CV</span><i class="uil uil-download-alt"></i></a>
                     </div>
                 </div>
             </div>
@@ -207,8 +209,8 @@
 
         <!--==================== SKILLS SNAPSHOT ====================-->
         <section class="stats_section" id="skills-snapshot">
-            <h2 class="section_title">Core Tech Stack</h2>
-            <span class="section_subtitle">Technologies I work with daily</span>
+            <h2 class="section_title" data-i18n="stack.title">Core Tech Stack</h2>
+            <span class="section_subtitle" data-i18n="stack.subtitle">Technologies I work with daily</span>
             <div class="container stats_container">
                 <div class="stat_item">
                     <div class="stat_value">Languages</div>
@@ -261,7 +263,7 @@
         <!--==================== BRANDS MARQUEE ====================-->
         <section class="brands_section">
             <div class="container">
-                <h3 class="brands_title">Trusted by Leading Brands</h3>
+                <h3 class="brands_title" data-i18n="brands.title">Trusted by Leading Brands</h3>
                 <div class="brands_strip">
                     <div class="brands_fade_left"></div>
                     <div class="brands_fade_right"></div>
@@ -273,22 +275,22 @@
 
         <!--==================== CAPABILITIES (moved) ====================-->
         <section class="capabilities_section" id="capabilities">
-            <h2 class="section_title">Capabilities</h2>
-            <span class="section_subtitle">What I Do</span>
+            <h2 class="section_title" data-i18n="capabilities.title">Capabilities</h2>
+            <span class="section_subtitle" data-i18n="capabilities.subtitle">What I Do</span>
             <div class="container capabilities_grid" id="capabilities-grid"></div>
         </section>
 
         <!--==================== EXPERIENCE ====================-->
         <section class="experience section" id="experience">
-            <h2 class="section_title">Experience</h2>
-            <span class="section_subtitle">Professional & Organizational</span>
+            <h2 class="section_title" data-i18n="experience.title">Experience</h2>
+            <span class="section_subtitle" data-i18n="experience.subtitle">Professional & Organizational</span>
             <div class="experience_container container" id="experience-container"></div>
         </section>
 
         <!--==================== SKILLS (Card Style) ====================-->
         <section class="skills section" id="skills">
-            <h2 class="section_title">Skills</h2>
-            <span class="section_subtitle">My technical level</span>
+            <h2 class="section_title" data-i18n="skills.title">Skills</h2>
+            <span class="section_subtitle" data-i18n="skills.subtitle">My technical level</span>
             <div class="skills_cards container skills_cards_grid" id="skills-cards"></div>
 
             <!-- Coding Profiles -->
@@ -300,19 +302,19 @@
 
         <!--==================== QUALIFICATION ====================-->
         <section class="qualification section">
-            <h2 class="section_title">Qualification</h2>
-            <span class="section_subtitle">My personal journey</span>
+            <h2 class="section_title" data-i18n="qualification.title">Qualification</h2>
+            <span class="section_subtitle" data-i18n="qualification.subtitle">My personal journey</span>
 
             <div class="qualification_container container">
                 <div class="qualification_tabs">
                     <div class="qualification_button button--flex qualification_active" data-target="#education">
-                        <i class="uil uil-graduation-cap qualification_icon"></i> Education
+                        <i class="uil uil-graduation-cap qualification_icon"></i> <span data-i18n="qualification.tab.education">Education</span>
                     </div>
                     <div class="qualification_button button--flex" data-target="#work">
-                        <i class="uil uil-building qualification_icon"></i> Organization
+                        <i class="uil uil-building qualification_icon"></i> <span data-i18n="qualification.tab.organization">Organization</span>
                     </div>
                     <div class="qualification_button button--flex" data-target="#volunteering">
-                        <i class="uil uil-heart qualification_icon"></i> Volunteering
+                        <i class="uil uil-heart qualification_icon"></i> <span data-i18n="qualification.tab.volunteering">Volunteering</span>
                     </div>
                 </div>
 
@@ -331,8 +333,8 @@
 
         <!--==================== PORTFOLIO ====================-->
         <section class="portfolio section" id="project">
-            <h2 class="section_title">Projects</h2>
-            <span class="section_subtitle">Most recent work</span>
+            <h2 class="section_title" data-i18n="portfolio.title">Projects</h2>
+            <span class="section_subtitle" data-i18n="portfolio.subtitle">Most recent work</span>
 
             <div class="portfolio_container container swiper-container">
                 <div class="swiper-wrapper" id="projects-wrapper"></div>
@@ -368,15 +370,15 @@
 
         <!--==================== COMPETITION ====================-->
         <section class="section" id="competition">
-            <h2 class="section_title">Competition</h2>
-            <span class="section_subtitle">Achievements & Awards</span>
+            <h2 class="section_title" data-i18n="competition.title">Competition</h2>
+            <span class="section_subtitle" data-i18n="competition.subtitle">Achievements & Awards</span>
             <div class="awards_grid container" id="competitions-wrapper"></div>
         </section>
 
         <!--==================== RESEARCH ====================-->
         <section class="section" id="research">
-            <h2 class="section_title">Research</h2>
-            <span class="section_subtitle">Academic Publications</span>
+            <h2 class="section_title" data-i18n="research.title">Research</h2>
+            <span class="section_subtitle" data-i18n="research.subtitle">Academic Publications</span>
             <div class="research_list container" id="research-wrapper"></div>
         </section>
 
@@ -384,11 +386,11 @@
         <section class="cta_section">
             <div class="cta_inner container">
                 <div class="cta_content">
-                    <span class="cta_label"><i class="uil uil-rss"></i> Blog</span>
-                    <h2 class="cta_title">Read My Blog</h2>
-                    <p class="cta_desc">Sharing notes, tutorials, and insights about IT, coding, and software development.</p>
+                    <span class="cta_label"><i class="uil uil-rss"></i> <span data-i18n="blog.label">Blog</span></span>
+                    <h2 class="cta_title" data-i18n="blog.title">Read My Blog</h2>
+                    <p class="cta_desc" data-i18n="blog.desc">Sharing notes, tutorials, and insights about IT, coding, and software development.</p>
                     <a href="https://hafizewp.wixsite.com/website/blog" target="_blank" class="cta_btn">
-                        Visit Blog <i class="uil uil-arrow-right"></i>
+                        <span data-i18n="blog.btn">Visit Blog</span> <i class="uil uil-arrow-right"></i>
                     </a>
                 </div>
                 <div class="cta_deco" aria-hidden="true">
@@ -399,23 +401,23 @@
 
         <!--==================== CERTIFICATE ====================-->
         <section class="section" id="certificate">
-            <h2 class="section_title">Certificate</h2>
-            <span class="section_subtitle">Credentials & Learning</span>
+            <h2 class="section_title" data-i18n="certificate.title">Certificate</h2>
+            <span class="section_subtitle" data-i18n="certificate.subtitle">Credentials & Learning</span>
             <div class="certs_grouped container" id="events-wrapper"></div>
         </section>
 
         <!--==================== RUNNING ====================-->
         <section class="section" id="running">
-            <h2 class="section_title">Running</h2>
-            <span class="section_subtitle">Sport & Marathon Events</span>
+            <h2 class="section_title" data-i18n="running.title">Running</h2>
+            <span class="section_subtitle" data-i18n="running.subtitle">Sport & Marathon Events</span>
 
             <!-- Strava Stats Widget -->
             <div class="strava_widget container" id="strava-widget">
                 <div class="strava_widget_header">
                     <svg class="strava_logo" width="22" height="22" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-label="Strava"><path d="M15.387 17.944l-2.089-4.116h-3.065L15.387 24l5.15-10.172h-3.066m-7.008-5.599l2.836 5.598h4.172L10.463 0 5 13.828h4.172"/></svg>
-                    <span class="strava_widget_label">Strava Stats</span>
+                    <span class="strava_widget_label" data-i18n="strava.label">Strava Stats</span>
                     <a class="strava_profile_link" href="https://www.strava.com/athletes/26880798" target="_blank" rel="noopener">
-                        View Profile <i class="uil uil-external-link-alt"></i>
+                        <span data-i18n="strava.viewProfile">View Profile</span> <i class="uil uil-external-link-alt"></i>
                     </a>
                 </div>
                 <div class="strava_stats_grid" id="strava-stats">
@@ -429,40 +431,40 @@
 
         <!--==================== CONTACT ME ====================-->
         <section class="contact section" id="contact">
-            <h2 class="section_title">Contact Me</h2>
-            <span class="section_subtitle">Get in touch</span>
+            <h2 class="section_title" data-i18n="contact.title">Contact Me</h2>
+            <span class="section_subtitle" data-i18n="contact.subtitle">Get in touch</span>
             <div class="contact_container container">
                 <div class="contact_cards">
                     <div class="contact_card reveal">
                         <div class="contact_card_icon"><i class="uil uil-envelope"></i></div>
-                        <h3 class="contact_card_title">Email</h3>
+                        <h3 class="contact_card_title" data-i18n="contact.email">Email</h3>
                         <p class="contact_card_value" data-copy="hafizewp22@outlook.com">hafizewp22@outlook.com</p>
-                        <button class="contact_card_action" data-copy-btn>Copy</button>
+                        <button class="contact_card_action" data-copy-btn data-i18n="contact.copy">Copy</button>
                     </div>
                     <div class="contact_card reveal">
                         <div class="contact_card_icon"><i class="uil uil-map-marker"></i></div>
-                        <h3 class="contact_card_title">Location</h3>
+                        <h3 class="contact_card_title" data-i18n="contact.location">Location</h3>
                         <p class="contact_card_value" data-copy="Serang, Indonesia">Serang, Indonesia</p>
-                        <button class="contact_card_action" data-copy-btn>Copy</button>
+                        <button class="contact_card_action" data-copy-btn data-i18n="contact.copy">Copy</button>
                     </div>
                     <div class="contact_card reveal">
                         <div class="contact_card_icon"><i class="uil uil-linkedin-alt"></i></div>
-                        <h3 class="contact_card_title">LinkedIn</h3>
+                        <h3 class="contact_card_title" data-i18n="contact.linkedin">LinkedIn</h3>
                         <p class="contact_card_value">/in/hafizewp</p>
-                        <a class="contact_card_action" href="https://www.linkedin.com/in/hafizewp/" target="_blank">Open</a>
+                        <a class="contact_card_action" href="https://www.linkedin.com/in/hafizewp/" target="_blank" data-i18n="contact.open">Open</a>
                     </div>
                     <div class="contact_card reveal">
                         <div class="contact_card_icon"><i class="uil uil-github-alt"></i></div>
-                        <h3 class="contact_card_title">GitHub</h3>
+                        <h3 class="contact_card_title" data-i18n="contact.github">GitHub</h3>
                         <p class="contact_card_value">@hafizewp22</p>
-                        <a class="contact_card_action" href="https://github.com/hafizewp22" target="_blank">Open</a>
+                        <a class="contact_card_action" href="https://github.com/hafizewp22" target="_blank" data-i18n="contact.open">Open</a>
                     </div>
                 </div>
                 <div class="contact_cta_box reveal">
-                    <h3 class="contact_cta_title">Let’s Collaborate</h3>
-                    <p class="contact_cta_text">Want to build a project together or need help with database streaming and web development? Reach out and I’ll respond soon.</p>
-                    <a href="mailto:hafizewp22@outlook.com?subject=Project%20Collaboration&body=Hi%20Hafiz,%0A%0AI'd%20like%20to%20discuss%20a%20project%20or%20get%20help%20with%20database%20streaming%20%2F%20web%20development.%0A%0AThank%20you." class="pill-btn pill-btn--gradient" aria-label="Start collaboration conversation">
-                        <span>Start Conversation</span>
+                    <h3 class="contact_cta_title" data-i18n="contact.cta.title">Let’s Collaborate</h3>
+                    <p class="contact_cta_text" data-i18n="contact.cta.text">Want to build a project together or need help with database streaming and web development? Reach out and I’ll respond soon.</p>
+                    <a href="mailto:hafizewp22@outlook.com?subject=Project%20Collaboration&body=Hi%20Hafiz,%0A%0AI’d%20like%20to%20discuss%20a%20project%20or%20get%20help%20with%20database%20streaming%20%2F%20web%20development.%0A%0AThank%20you." class="pill-btn pill-btn--gradient" aria-label="Start collaboration conversation">
+                        <span data-i18n="contact.cta.btn">Start Conversation</span>
                         <span class="pill-icon"><i class="uil uil-message"></i></span>
                     </a>
                 </div>
@@ -484,14 +486,14 @@
                             <a href="#services" class="footer_link ">Services</a>
                         </li> -->
                     <li>
-                        <a href="https://hafizewp.wixsite.com/website/blog" target="_blank" class="footer_link">Blog</a>
+                        <a href="https://hafizewp.wixsite.com/website/blog" target="_blank" class="footer_link" data-i18n="footer.blog">Blog</a>
                     </li>
                     <li>
                         <a href="https://www.scribd.com/user/298675331/hafizewp" target="_blank"
-                            class="footer_link">Research</a>
+                            class="footer_link" data-i18n="footer.research">Research</a>
                     </li>
                     <li>
-                        <a href="https://forms.office.com/r/BxU2A2NsT2" class="footer_link">Feedback</a>
+                        <a href="https://forms.office.com/r/BxU2A2NsT2" class="footer_link" data-i18n="footer.feedback">Feedback</a>
                     </li>
                 </ul>
 
@@ -518,7 +520,7 @@
                 </div>
             </div>
 
-            <p class="footer_copy">&#169; Hafiz E Wedo Putra. All right reserved</p>
+            <p class="footer_copy" data-i18n="footer.copy">&#169; Hafiz E Wedo Putra. All right reserved</p>
         </div>
 
     </footer>
@@ -546,7 +548,7 @@
                 <span class="pdf_modal_title" id="pdf-modal-title"></span>
                 <div class="pdf_modal_actions">
                     <a class="pdf_modal_download" id="pdf-modal-link" href="#" target="_blank" rel="noopener">
-                        <i class="uil uil-download-alt"></i> Download
+                        <i class="uil uil-download-alt"></i> <span data-i18n="pdf.download">Download</span>
                     </a>
                     <button class="pdf_modal_close" id="pdf-modal-close" aria-label="Close">
                         <i class="uil uil-times"></i>
@@ -554,8 +556,8 @@
                 </div>
             </div>
             <iframe class="pdf_modal_frame" id="pdf-modal-frame" src="" title="Certificate PDF" loading="lazy"></iframe>
-            <p class="pdf_modal_fallback">PDF cannot be displayed in this browser.
-                <a id="pdf-modal-fallback-link" href="#" target="_blank" rel="noopener">Open / Download here</a>
+            <p class="pdf_modal_fallback"><span data-i18n="pdf.fallback">PDF cannot be displayed in this browser.</span>
+                <a id="pdf-modal-fallback-link" href="#" target="_blank" rel="noopener" data-i18n="pdf.fallbackLink">Open / Download here</a>
             </p>
         </div>
     </div>

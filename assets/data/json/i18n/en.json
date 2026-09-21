@@ -1,0 +1,121 @@
+{
+  "nav.home": "Home",
+  "nav.about": "About",
+  "nav.skill": "Skill",
+  "nav.project": "Project",
+  "nav.portfolio": "Portfolio ▾",
+  "nav.capabilities": "Capabilities",
+  "nav.experience": "Experience",
+  "nav.competition": "Competition",
+  "nav.research": "Research",
+  "nav.certificate": "Certificate",
+  "nav.running": "Running",
+
+  "home.cta": "Contact Me",
+  "home.scroll": "Scroll down",
+
+  "about.title": "About Me",
+  "about.subtitle": "Introduction",
+  "about.text": "I am a Software & Web Developer with <strong>3+ years</strong> hands‑on experience across fintech, telecom, and SaaS projects. I'm driven by integrity, responsibility, and collaborative problem‑solving. I have delivered attendance & leave automation, KPI evaluation modules, QR‑verified document workflows, meeting room booking, and multi‑source data validation services using Golang, Vue.js, React, Laravel, MySQL, PostgreSQL, and REST APIs. I enjoy turning product ideas into performant, maintainable code and optimizing data flows (streaming & transactional). I'm seeking the next challenge where pragmatic engineering, clean interfaces, and reliable data integration create measurable impact.",
+  "about.metric.experience": "Years of Experience",
+  "about.metric.companies": "Companies I've Worked For",
+  "about.metric.projects": "Successful Projects",
+  "about.metric.hours": "Hours Coding",
+  "about.btn.about": "About Me",
+  "about.btn.cv": "Download CV",
+
+  "stack.title": "Core Tech Stack",
+  "stack.subtitle": "Technologies I work with daily",
+
+  "brands.title": "Trusted by Leading Brands",
+
+  "capabilities.title": "Capabilities",
+  "capabilities.subtitle": "What I Do",
+
+  "experience.title": "Experience",
+  "experience.subtitle": "Professional & Organizational",
+
+  "skills.title": "Skills",
+  "skills.subtitle": "My technical level",
+
+  "qualification.title": "Qualification",
+  "qualification.subtitle": "My personal journey",
+  "qualification.tab.education": "Education",
+  "qualification.tab.organization": "Organization",
+  "qualification.tab.volunteering": "Volunteering",
+
+  "portfolio.title": "Projects",
+  "portfolio.subtitle": "Most recent work",
+
+  "competition.title": "Competition",
+  "competition.subtitle": "Achievements & Awards",
+  "competition.rank1": "1st Place",
+  "competition.rank2": "2nd Place",
+  "competition.rank3": "3rd Place",
+  "competition.participant": "Participant",
+  "competition.viewCert": "View Certificate",
+
+  "research.title": "Research",
+  "research.subtitle": "Academic Publications",
+  "research.tag": "Research Paper",
+  "research.readMore": "Read Full Paper",
+
+  "blog.label": "Blog",
+  "blog.title": "Read My Blog",
+  "blog.desc": "Sharing notes, tutorials, and insights about IT, coding, and software development.",
+  "blog.btn": "Visit Blog",
+
+  "certificate.title": "Certificate",
+  "certificate.subtitle": "Credentials & Learning",
+
+  "running.title": "Running",
+  "running.subtitle": "Sport & Marathon Events",
+
+  "strava.label": "Strava Stats",
+  "strava.viewProfile": "View Profile",
+  "strava.totalRuns": "Total Runs",
+  "strava.totalDistance": "Total Distance",
+  "strava.totalElevation": "Total Elevation",
+  "strava.runsYear": "Runs This Year",
+  "strava.distanceYear": "Distance This Year",
+  "strava.runsRecent": "Runs (4 Weeks)",
+
+  "run.finishTime": "Finish Time",
+  "run.overall": "Overall",
+  "run.gender": "Gender",
+  "run.certificate": "Certificate",
+  "run.results": "Results",
+
+  "contact.title": "Contact Me",
+  "contact.subtitle": "Get in touch",
+  "contact.email": "Email",
+  "contact.location": "Location",
+  "contact.linkedin": "LinkedIn",
+  "contact.github": "GitHub",
+  "contact.copy": "Copy",
+  "contact.open": "Open",
+  "contact.cta.title": "Let's Collaborate",
+  "contact.cta.text": "Want to build a project together or need help with database streaming and web development? Reach out and I'll respond soon.",
+  "contact.cta.btn": "Start Conversation",
+
+  "gh.viewProfile": "View Profile",
+  "gh.repositories": "Repositories",
+  "gh.followers": "Followers",
+  "gh.following": "Following",
+  "gh.joined": "Joined",
+  "gh.loading": "Loading repositories…",
+
+  "hr.viewProfile": "View Profile",
+  "hr.badges": "Badges",
+  "hr.certifications": "Certifications",
+  "hr.verified": "Verified",
+
+  "footer.copy": "© Hafiz E Wedo Putra. All right reserved",
+  "footer.blog": "Blog",
+  "footer.research": "Research",
+  "footer.feedback": "Feedback",
+
+  "pdf.download": "Download",
+  "pdf.fallback": "PDF cannot be displayed in this browser.",
+  "pdf.fallbackLink": "Open / Download here"
+}
