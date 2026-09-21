@@ -542,7 +542,15 @@ function renderResearch(data){
 function renderEvents(data){
     const wrap = document.getElementById('events-wrapper');
     if(!wrap) return;
-    wrap.innerHTML = data.map(e => `
+    const categoryOrder = ['Pelatihan', 'Sertifikasi', 'Akademik', 'Kursus Online'];
+    const categoryIcon  = { Pelatihan: 'uil-award', Sertifikasi: 'uil-medal', Akademik: 'uil-graduation-cap', 'Kursus Online': 'uil-play-circle' };
+    const groups = {};
+    data.forEach(e => {
+        const cat = e.category || 'Lainnya';
+        if(!groups[cat]) groups[cat] = [];
+        groups[cat].push(e);
+    });
+    const certCard = e => `
         <div class="cert_item reveal" role="button" tabindex="0"
              data-img="${e.image}" data-caption="${e.title}"
              onclick="openLightbox(this)" onkeydown="if(event.key==='Enter')openLightbox(this)">
@@ -553,9 +561,17 @@ function renderEvents(data){
                     <p class="cert_overlay_desc">${e.description}</p>
                 </div>
             </div>
-            <div class="cert_info">
-                <h4 class="cert_title">${e.title}</h4>
+            <div class="cert_info"><h4 class="cert_title">${e.title}</h4></div>
+        </div>`;
+    const orderedCats = [...categoryOrder.filter(c => groups[c]), ...Object.keys(groups).filter(c => !categoryOrder.includes(c))];
+    wrap.innerHTML = orderedCats.map(cat => `
+        <div class="cert_group">
+            <div class="cert_group_header">
+                <i class="uil ${categoryIcon[cat] || 'uil-folder'} cert_group_icon"></i>
+                <h3 class="cert_group_title">${cat}</h3>
+                <span class="cert_group_count">${groups[cat].length}</span>
             </div>
+            <div class="certs_grid_inner">${groups[cat].map(certCard).join('')}</div>
         </div>
     `).join('');
 }

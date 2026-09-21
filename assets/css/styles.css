@@ -1967,6 +1967,18 @@ body.dark-theme .brands_fade_right{background:linear-gradient(to left,var(--body
 @media screen and (min-width:1024px){.certs_grid{grid-template-columns:repeat(auto-fill,minmax(190px,1fr));}}
 .cert_item{cursor:pointer;}
 
+/*==================== CERTIFICATE GROUPED ====================*/
+.certs_grouped{margin-top:1rem;}
+.cert_group{margin-bottom:2.5rem;}
+.cert_group_header{display:flex;align-items:center;gap:.6rem;margin-bottom:1rem;padding-bottom:.5rem;border-bottom:2px solid var(--first-color-lighter);}
+.cert_group_icon{font-size:1.25rem;color:var(--first-color);}
+.cert_group_title{font-size:1rem;font-weight:700;color:var(--title-color);margin:0;}
+.cert_group_count{margin-left:auto;font-size:.72rem;font-weight:600;color:var(--first-color);background:var(--first-color-lighter);padding:.15rem .5rem;border-radius:999px;}
+.certs_grid_inner{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:1rem;}
+@media screen and (max-width:480px){.certs_grid_inner{grid-template-columns:repeat(2,1fr);}}
+@media screen and (min-width:768px){.certs_grid_inner{grid-template-columns:repeat(auto-fill,minmax(180px,1fr));}}
+@media screen and (min-width:1024px){.certs_grid_inner{grid-template-columns:repeat(auto-fill,minmax(190px,1fr));}}
+
 /*==================== LIGHTBOX ====================*/
 .lightbox{position:fixed;inset:0;z-index:2000;display:flex;align-items:center;justify-content:center;padding:1.5rem;opacity:0;visibility:hidden;transition:opacity .3s,visibility .3s;}
 .lightbox--open{opacity:1;visibility:visible;}
