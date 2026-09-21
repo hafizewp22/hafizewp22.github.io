@@ -625,9 +625,14 @@ function renderHackerRank(data){
         </span>`).join('');
     wrap.innerHTML = `
         <div class="hr_header">
-            <img src="https://cdn.simpleicons.org/hackerrank/ffffff" class="hr_logo" width="28" height="28" alt="HackerRank"/>
-            <div class="hr_header_info">
+            <div class="hr_brand">
+                <img src="https://cdn.simpleicons.org/hackerrank/ffffff" class="hr_logo" width="26" height="26" alt="HackerRank"
+                     onerror="this.style.display='none'"/>
+                <span class="hr_brand_name">HackerRank</span>
+            </div>
+            <div class="hr_header_meta">
                 <span class="hr_username">@${data.username}</span>
+                <span class="hr_dot">·</span>
                 <span class="hr_title">${data.title}</span>
             </div>
             <a class="hr_profile_link" href="${data.profileUrl}" target="_blank" rel="noopener">
