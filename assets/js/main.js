@@ -542,11 +542,11 @@ function renderResearch(data){
 function renderEvents(data){
     const wrap = document.getElementById('events-wrapper');
     if(!wrap) return;
-    const categoryOrder = ['Pelatihan', 'Sertifikasi', 'Akademik', 'Kursus Online'];
-    const categoryIcon  = { Pelatihan: 'uil-award', Sertifikasi: 'uil-medal', Akademik: 'uil-graduation-cap', 'Kursus Online': 'uil-play-circle' };
+    const categoryOrder = ['Training', 'Certification', 'Academic', 'Online Course'];
+    const categoryIcon  = { Training: 'uil-award', Certification: 'uil-medal', Academic: 'uil-graduation-cap', 'Online Course': 'uil-play-circle' };
     const groups = {};
     data.forEach(e => {
-        const cat = e.category || 'Lainnya';
+        const cat = e.category || 'Other';
         if(!groups[cat]) groups[cat] = [];
         groups[cat].push(e);
     });
