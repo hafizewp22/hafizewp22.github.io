@@ -878,13 +878,13 @@ function renderSports(data){
             <div class="run_stats">
                 <div class="run_stat">
                     <span class="run_stat_val">${r.overallRank}</span>
-                    <span class="run_stat_label">of ${r.overallTotal}</span>
+                    <span class="run_stat_label">${t('run.of','of')} ${r.overallTotal}</span>
                     <span class="run_stat_key">${t('run.overall','Overall')}</span>
                 </div>
                 <div class="run_stat_divider"></div>
                 <div class="run_stat">
                     <span class="run_stat_val">${r.genderRank}</span>
-                    <span class="run_stat_label">of ${r.genderTotal}</span>
+                    <span class="run_stat_label">${t('run.of','of')} ${r.genderTotal}</span>
                     <span class="run_stat_key">${t('run.gender','Gender')}</span>
                 </div>
             </div>
