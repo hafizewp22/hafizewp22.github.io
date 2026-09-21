@@ -45,7 +45,6 @@ window.__DATA__ = {
     {"title":"UI/UX Applications BestDoc","description":"Vet booking & pet hotel app UI/UX design.","image":"assets/img/portfolio9.png","link":"https://www.figma.com/community/file/1030133560500275500","linkLabel":"View"},
     {"title":"EzyFood","description":"Food & drinks ordering mobile app using API.","image":"assets/img/portfolio10.png","link":"https://github.com/hafizelfiawedoputra/EzyFood","linkLabel":"View"},
     {"title":"Happy Book Store","description":"Laravel 8 library website with MySQL.","image":"assets/img/portfolio11.png","link":"https://github.com/hafizelfiawedoputra/HappyBookStoreUTS","linkLabel":"View"},
-    {"title":"JH Furniture (Goods Online Store)","description":"Laravel 8 based online goods store.","image":"assets/img/portfolio12.png","link":"https://github.com/hafizelfiawedoputra/JH_Furniture","linkLabel":"View"},
     {"title":"Thesis Project: Poris Indah Smart School (POINSS)","description":"Laravel 9 + Tailwind e-learning platform.","image":"assets/img/portfolio13.png","link":"https://github.com/hafizewp22/Poris-Indah-Smart-School-POINSS","linkLabel":"View"},
     {"title":"MyGram with Golang","description":"Photo sharing & comments app in Go.","image":"assets/img/portfolio10.png","link":"https://github.com/hafizewp22/Poris-Indah-Smart-School-POINSS","linkLabel":"View"}
   ],
