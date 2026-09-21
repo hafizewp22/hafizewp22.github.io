@@ -1,22 +1,22 @@
 [
   {
-    "title": "Web Development",
-    "description": "Modern, accessible, responsive websites and dashboards using clean, maintainable code.",
+    "title": {"en": "Web Development", "id": "Pengembangan Web"},
+    "description": {"en": "Modern, accessible, responsive websites and dashboards using clean, maintainable code.", "id": "Website dan dashboard modern, aksesibel, responsif menggunakan kode yang bersih dan mudah dipelihara."},
     "iconClass": "uil uil-brackets-curly"
   },
   {
-    "title": "Mobile & Hybrid",
-    "description": "Prototype and build mobile app experiences focusing on usability & performance.",
+    "title": {"en": "Mobile & Hybrid", "id": "Mobile & Hybrid"},
+    "description": {"en": "Prototype and build mobile app experiences focusing on usability & performance.", "id": "Prototype dan bangun pengalaman aplikasi mobile dengan fokus pada kemudahan penggunaan & performa."},
     "iconClass": "uil uil-mobile-android"
   },
   {
-    "title": "Data & Database",
-    "description": "Design structured schemas, integrate APIs, and transform data for insights.",
+    "title": {"en": "Data & Database", "id": "Data & Basis Data"},
+    "description": {"en": "Design structured schemas, integrate APIs, and transform data for insights.", "id": "Merancang skema terstruktur, mengintegrasikan API, dan mengolah data untuk wawasan bisnis."},
     "iconClass": "uil uil-database"
   },
   {
-    "title": "UI / UX",
-    "description": "Create clear interface flows, component systems, and pixel-consistent layouts.",
+    "title": {"en": "UI / UX", "id": "UI / UX"},
+    "description": {"en": "Create clear interface flows, component systems, and pixel-consistent layouts.", "id": "Membuat alur antarmuka yang jelas, sistem komponen, dan tata letak yang konsisten."},
     "iconClass": "uil uil-palette"
   }
 ]

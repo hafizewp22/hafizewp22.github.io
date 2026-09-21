@@ -1,16 +1,8 @@
 [
   {
-    "title": "My Gram",
-    "period": "Apr 2023",
-    "description": "Photo sharing app — store photos and comment on others' photos. Built with Golang REST API and PostgreSQL.",
-    "technologies": ["Golang", "PostgreSQL", "REST API"],
-    "image": "assets/img/portfolio5.png",
-    "github": "https://github.com/hafizewp22"
-  },
-  {
     "title": "Thesis: Poris Indah Smart School (POINSS)",
     "period": "Sep 2022 – Jan 2023",
-    "description": "Web-based e-learning platform for admin, teachers, and students of Poris Indah Tangerang High School.",
+    "description": {"en": "Web-based e-learning platform for admin, teachers, and students of Poris Indah Tangerang High School.", "id": "Platform e-learning berbasis web untuk admin, guru, dan siswa SMAN Poris Indah Tangerang."},
     "technologies": ["Laravel 9", "MySQL", "Tailwind CSS", "PHP"],
     "contributors": ["Meliska", "Seviera"],
     "association": "BINUS University",
@@ -20,15 +12,16 @@
   {
     "title": "BOM Tiket",
     "period": "Nov 2021 – Feb 2022",
-    "description": "Online cinema ticket ordering app built with Kotlin on Android Studio, using Firebase as the backend.",
+    "description": {"en": "Online cinema ticket ordering app built with Kotlin on Android Studio, using Firebase as the backend.", "id": "Aplikasi pemesanan tiket bioskop online berbasis Kotlin di Android Studio, menggunakan Firebase sebagai backend."},
     "technologies": ["Kotlin", "Android Studio", "Firebase"],
     "contributors": ["Fajar Muhammad", "Karen"],
-    "image": "assets/img/portfolio6.png"
+    "image": "assets/img/portfolio14.png",
+    "github": "https://github.com/fikri011100/bom-tiket"
   },
   {
     "title": "Happy Book Store",
     "period": "Jan 2022 – Feb 2022",
-    "description": "Library management website — Web Programming course project using PHP Laravel 8 and MySQL.",
+    "description": {"en": "Library management website — Web Programming course project using PHP Laravel 8 and MySQL.", "id": "Website manajemen perpustakaan — proyek mata kuliah Pemrograman Web menggunakan PHP Laravel 8 dan MySQL."},
     "technologies": ["Laravel 8", "PHP", "MySQL"],
     "association": "BINUS University",
     "image": "assets/img/portfolio11.png",
@@ -37,34 +30,35 @@
   {
     "title": "BukaWarung",
     "period": "Sep 2021 – Jan 2022",
-    "description": "Daily needs shopping web app. Built with PHP Laravel 8 and MySQL.",
+    "description": {"en": "Daily needs shopping web app. Built with PHP Laravel 8 and MySQL.", "id": "Aplikasi web belanja kebutuhan sehari-hari. Dibangun dengan PHP Laravel 8 dan MySQL."},
     "technologies": ["Laravel 8", "PHP", "MySQL", "Bootstrap"],
     "contributors": ["Tristania", "Seviera"],
     "association": "BINUS University",
     "image": "assets/img/portfolio2.png",
-    "link": "https://projectbukawarung01.000webhostapp.com/",
-    "linkLabel": "Demo"
+    "github": "https://github.com/hafizewp22/BukaWarung_Project"
   },
   {
     "title": "Indonesian COVID-19 Vaccination Data",
     "period": "Mar 2021 – May 2021",
-    "description": "Data dashboard tracking COVID-19 vaccination progress in Indonesia using Google Data Studio.",
+    "description": {"en": "Data dashboard tracking COVID-19 vaccination progress in Indonesia using Google Data Studio.", "id": "Dashboard data untuk memantau perkembangan vaksinasi COVID-19 di Indonesia menggunakan Google Data Studio."},
     "technologies": ["Google Data Studio", "Data Analysis"],
     "contributors": ["Asqal"],
     "association": "BINUS University",
-    "image": "assets/img/portfolio10.png"
+    "image": "assets/img/portfolio1.png",
+    "github": "https://github.com/hafizewp22/Data-Covid-19-Indonesia"
   },
   {
     "title": "Face Mask Detection",
     "period": "Dec 2020 – Apr 2021",
-    "description": "Real-time face mask detection using Python deep learning, built and trained on Google Colab.",
+    "description": {"en": "Real-time face mask detection using Python deep learning, built and trained on Google Colab.", "id": "Deteksi masker wajah secara real-time menggunakan deep learning Python, dibangun dan dilatih di Google Colab."},
     "technologies": ["Python", "Deep Learning", "Google Colab", "Jupyter Notebook"],
-    "image": "assets/img/portfolio8.jpg"
+    "image": "assets/img/portfolio6.png",
+    "github": "https://github.com/hafizewp22/Face-Mask-Detection"
   },
   {
     "title": "UI/UX – BestDoc App",
     "period": "2022",
-    "description": "Vet booking & pet hotel app UI/UX design — covers booking flows, pet profiles, and appointment management.",
+    "description": {"en": "Vet booking & pet hotel app UI/UX design — covers booking flows, pet profiles, and appointment management.", "id": "Desain UI/UX aplikasi pemesanan dokter hewan & hotel hewan peliharaan — mencakup alur pemesanan, profil hewan, dan manajemen janji temu."},
     "technologies": ["Figma", "UI/UX Design"],
     "image": "assets/img/portfolio9.png",
     "figma": "https://www.figma.com/community/file/1030133560500275500"
@@ -72,7 +66,7 @@
   {
     "title": "Clothing Store Cashier Application",
     "period": "Feb 2019 – Jun 2019",
-    "description": "Desktop cashier app for a clothing store — manages inventory, transactions, and sales reporting.",
+    "description": {"en": "Desktop cashier app for a clothing store — manages inventory, transactions, and sales reporting.", "id": "Aplikasi kasir desktop untuk toko pakaian — mengelola inventaris, transaksi, dan pelaporan penjualan."},
     "technologies": ["MySQL", "JavaScript", "VB.NET"],
     "image": "assets/img/portfolio3.png",
     "github": "https://github.com/hafizelfiawedoputra/Aplikasi-Kasir-Toko-Pakaian"
@@ -80,7 +74,7 @@
   {
     "title": "Quiz Tokoh Dunia",
     "period": "2022",
-    "description": "Android quiz game about world figures. Built with Android Studio as a personal project.",
+    "description": {"en": "Android quiz game about world figures. Built with Android Studio as a personal project.", "id": "Game kuis Android tentang tokoh-tokoh dunia. Dibangun dengan Android Studio sebagai proyek pribadi."},
     "technologies": ["Android Studio", "Java"],
     "image": "assets/img/portfolio4.png",
     "github": "https://github.com/hafizelfiawedoputra/quiztokohdunia"

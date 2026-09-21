@@ -1,6 +1,6 @@
 [
   {
-    "title": "Front-End",
+    "title": {"en": "Front-End", "id": "Front-End"},
     "iconClass": "uil uil-window",
     "items": [
       {"name": "HTML5",        "level": "Advanced"},
@@ -16,7 +16,7 @@
     ]
   },
   {
-    "title": "Back-End",
+    "title": {"en": "Back-End", "id": "Back-End"},
     "iconClass": "uil uil-server",
     "items": [
       {"name": "Golang",    "level": "Intermediate"},
@@ -28,7 +28,7 @@
     ]
   },
   {
-    "title": "Databases",
+    "title": {"en": "Databases", "id": "Basis Data"},
     "iconClass": "uil uil-database",
     "items": [
       {"name": "MySQL",           "level": "Intermediate"},
@@ -40,7 +40,7 @@
     ]
   },
   {
-    "title": "Cloud & DevOps",
+    "title": {"en": "Cloud & DevOps", "id": "Cloud & DevOps"},
     "iconClass": "uil uil-cloud",
     "items": [
       {"name": "Microsoft Azure",    "level": "Basic"},
@@ -51,7 +51,7 @@
     ]
   },
   {
-    "title": "Tools & Platforms",
+    "title": {"en": "Tools & Platforms", "id": "Alat & Platform"},
     "iconClass": "uil uil-wrench",
     "items": [
       {"name": "Git",              "level": "Intermediate"},
@@ -66,7 +66,7 @@
     ]
   },
   {
-    "title": "Programming Languages",
+    "title": {"en": "Programming Languages", "id": "Bahasa Pemrograman"},
     "iconClass": "uil uil-brackets-curly",
     "items": [
       {"name": "Golang", "level": "Intermediate"},
@@ -79,7 +79,7 @@
     ]
   },
   {
-    "title": "Professional Skills",
+    "title": {"en": "Professional Skills", "id": "Keahlian Profesional"},
     "iconClass": "uil uil-users-alt",
     "items": [
       {"name": "Teamwork",        "level": "Strong"},
@@ -89,7 +89,7 @@
     ]
   },
   {
-    "title": "Languages",
+    "title": {"en": "Languages", "id": "Bahasa"},
     "iconClass": "uil uil-comment-dots",
     "items": [
       {"name": "Indonesian", "level": "Fluent"},

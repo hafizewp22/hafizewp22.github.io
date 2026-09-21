@@ -5,9 +5,9 @@
       "subtitle": "SMK Informatika Kota Serang",
       "period": "Jul 2016 – Jun 2019",
       "details": [
-        { "icon": "uil-medal",    "text": "Grade: 81 / 100" },
-        { "icon": "uil-book-alt", "text": "Thesis: Design of Student Data Processing Information System at Matthayom Watnairong School" },
-        { "icon": "uil-star",     "text": "Extracurricular: Graphic Design, Student Exchange" }
+        { "icon": "uil-medal",    "text": {"en": "Grade: 81 / 100", "id": "Nilai: 81 / 100"} },
+        { "icon": "uil-book-alt", "text": {"en": "Thesis: Design of Student Data Processing Information System at Matthayom Watnairong School", "id": "Tugas Akhir: Rancangan Sistem Informasi Pengolahan Data Siswa di Matthayom Watnairong School"} },
+        { "icon": "uil-star",     "text": {"en": "Extracurricular: Graphic Design, Student Exchange", "id": "Ekstrakurikuler: Desain Grafis, Pertukaran Pelajar"} }
       ]
     },
     {
@@ -15,7 +15,7 @@
       "subtitle": "Matthayom Watnairong School, Thailand",
       "period": "Jul 2018 – Jul 2018",
       "details": [
-        { "icon": "uil-globe", "text": "Student exchange — Indonesia's representative, partially funded & hosted by Matthayom Watnairong School" }
+        { "icon": "uil-globe", "text": {"en": "Student exchange — Indonesia's representative, partially funded & hosted by Matthayom Watnairong School", "id": "Pertukaran pelajar — perwakilan Indonesia, sebagian didanai & dijamu oleh Matthayom Watnairong School"} }
       ]
     },
     {
@@ -23,9 +23,9 @@
       "subtitle": "Bina Nusantara University (BINUS)",
       "period": "Sep 2019 – Apr 2023",
       "details": [
-        { "icon": "uil-medal",     "text": "GPA: 3.35 / 4.00 · Streaming: Database Technology" },
-        { "icon": "uil-book-alt",  "text": "Thesis: Design Of Web-Based Learning Media To Improve Learning Systems In Poris Indah Tangerang High School" },
-        { "icon": "uil-users-alt", "text": "Activities: BNCC · BNEC · Student Mentor (Friends Care Community)" }
+        { "icon": "uil-medal",     "text": {"en": "GPA: 3.35 / 4.00 · Streaming: Database Technology", "id": "IPK: 3.35 / 4.00 · Peminatan: Teknologi Basis Data"} },
+        { "icon": "uil-book-alt",  "text": {"en": "Thesis: Design Of Web-Based Learning Media To Improve Learning Systems In Poris Indah Tangerang High School", "id": "Skripsi: Perancangan Media Pembelajaran Berbasis Web untuk Meningkatkan Sistem Pembelajaran di SMA Poris Indah Tangerang"} },
+        { "icon": "uil-users-alt", "text": {"en": "Activities: BNCC · BNEC · Student Mentor (Friends Care Community)", "id": "Kegiatan: BNCC · BNEC · Mentor Mahasiswa (Friends Care Community)"} }
       ]
     }
   ],
@@ -41,9 +41,9 @@
       "subtitle": "Bina Nusantara Computer Club (BNCC)",
       "period": "Jul 2019 – Aug 2021",
       "details": [
-        { "icon": "uil-check-circle", "text": "MC & Public Speaking Training" },
-        { "icon": "uil-check-circle", "text": "Student Leadership Exercises (LKMM)" },
-        { "icon": "uil-check-circle", "text": "Website Design Training (HTML & CSS)" }
+        { "icon": "uil-check-circle", "text": {"en": "MC & Public Speaking Training", "id": "Pelatihan MC & Public Speaking"} },
+        { "icon": "uil-check-circle", "text": {"en": "Student Leadership Exercises (LKMM)", "id": "Latihan Kepemimpinan Mahasiswa (LKMM)"} },
+        { "icon": "uil-check-circle", "text": {"en": "Website Design Training (HTML & CSS)", "id": "Pelatihan Desain Website (HTML & CSS)"} }
       ]
     },
     {
@@ -51,9 +51,9 @@
       "subtitle": "Bina Nusantara Computer Club (BNCC)",
       "period": "Aug 2020 – Feb 2022",
       "details": [
-        { "icon": "uil-check-circle", "text": "Curriculum & Teaching: planning class materials and schedules" },
-        { "icon": "uil-check-circle", "text": "IT Event Committee: planning & executing organization events" },
-        { "icon": "uil-check-circle", "text": "Attendance Management for training participants" }
+        { "icon": "uil-check-circle", "text": {"en": "Curriculum & Teaching: planning class materials and schedules", "id": "Kurikulum & Pengajaran: merencanakan materi kelas dan jadwal"} },
+        { "icon": "uil-check-circle", "text": {"en": "IT Event Committee: planning & executing organization events", "id": "Panitia Acara IT: merencanakan & melaksanakan kegiatan organisasi"} },
+        { "icon": "uil-check-circle", "text": {"en": "Attendance Management for training participants", "id": "Manajemen Kehadiran untuk peserta pelatihan"} }
       ]
     }
   ],
@@ -63,9 +63,9 @@
       "subtitle": "Friends Care Community · BINUS University",
       "period": "Oct 2021 – Feb 2022",
       "details": [
-        { "icon": "uil-heart",      "text": "Peduli Sahabat Kampus — community focused on disability awareness and special needs support on campus" },
-        { "icon": "uil-check-circle", "text": "Provided guidance and academic support to students with special needs throughout their college journey" },
-        { "icon": "uil-check-circle", "text": "Helped create an inclusive campus environment through direct mentoring and assistance" }
+        { "icon": "uil-heart",        "text": {"en": "Peduli Sahabat Kampus — community focused on disability awareness and special needs support on campus", "id": "Peduli Sahabat Kampus — komunitas yang berfokus pada kesadaran disabilitas dan dukungan kebutuhan khusus di kampus"} },
+        { "icon": "uil-check-circle", "text": {"en": "Provided guidance and academic support to students with special needs throughout their college journey", "id": "Memberikan bimbingan dan dukungan akademik kepada mahasiswa berkebutuhan khusus selama perjalanan kuliah mereka"} },
+        { "icon": "uil-check-circle", "text": {"en": "Helped create an inclusive campus environment through direct mentoring and assistance", "id": "Membantu menciptakan lingkungan kampus yang inklusif melalui pendampingan dan bantuan langsung"} }
       ]
     },
     {
@@ -73,9 +73,9 @@
       "subtitle": "Bina Nusantara Computer Club",
       "period": "Oct 2020 – Nov 2020",
       "details": [
-        { "icon": "uil-check-circle", "text": "BNCC CSR 2020 in collaboration with Yayasan Anak Bangsa (GO-JEK)" },
-        { "icon": "uil-check-circle", "text": "Managed participant documentation and registration data for the seminar" },
-        { "icon": "uil-check-circle", "text": "Event proceeds donated to Yayasan Anak Bangsa for education in Indonesia" }
+        { "icon": "uil-check-circle", "text": {"en": "BNCC CSR 2020 in collaboration with Yayasan Anak Bangsa (GO-JEK)", "id": "BNCC CSR 2020 berkolaborasi dengan Yayasan Anak Bangsa (GO-JEK)"} },
+        { "icon": "uil-check-circle", "text": {"en": "Managed participant documentation and registration data for the seminar", "id": "Mengelola dokumentasi peserta dan data registrasi untuk seminar"} },
+        { "icon": "uil-check-circle", "text": {"en": "Event proceeds donated to Yayasan Anak Bangsa for education in Indonesia", "id": "Hasil acara disumbangkan ke Yayasan Anak Bangsa untuk pendidikan di Indonesia"} }
       ]
     },
     {
@@ -83,7 +83,7 @@
       "subtitle": "ICPC – International Collegiate Programming Contest",
       "period": "Nov 2021",
       "details": [
-        { "icon": "uil-check-circle", "text": "Fully monitored the assigned team during ICPC Asia Jakarta Regional 2021" }
+        { "icon": "uil-check-circle", "text": {"en": "Fully monitored the assigned team during ICPC Asia Jakarta Regional 2021", "id": "Memantau sepenuhnya tim yang ditugaskan selama ICPC Asia Jakarta Regional 2021"} }
       ]
     }
   ]

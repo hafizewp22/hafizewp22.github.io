@@ -1,13 +1,13 @@
 [
   {
     "title": "ICPC Asia Jakarta - Indonesia National Contest (INC) 2020",
-    "description": "70th ranking of 700 teams - National level",
+    "description": {"en": "70th ranking of 700 teams - National level", "id": "Peringkat 70 dari 700 tim - Tingkat Nasional"},
     "image": "assets/img/Certificate22.png",
     "link": "https://icpc.global/ICPCID/IW4HPL3087C9"
   },
   {
     "title": "Designing UI/UX with Figma Competition",
-    "description": "3rd place - Food theme UI/UX design.",
+    "description": {"en": "3rd place - Food theme UI/UX design.", "id": "Juara 3 - Desain UI/UX bertema makanan."},
     "image": "assets/img/Certificate23.png",
     "link": "https://www.figma.com/community/file/1030045351994859774"
   }

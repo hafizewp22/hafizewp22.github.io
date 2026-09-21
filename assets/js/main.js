@@ -7,6 +7,14 @@ function t(key, fallback) {
     return _t[key] !== undefined ? _t[key] : (fallback !== undefined ? fallback : key);
 }
 
+// Pick the right language string from a bilingual field {en,id} or a plain string
+function loc(field) {
+    if (field && typeof field === 'object' && !Array.isArray(field)) {
+        return field[_lang] || field.en || '';
+    }
+    return field || '';
+}
+
 function applyStaticTranslations() {
     document.querySelectorAll('[data-i18n]').forEach(el => {
         const v = _t[el.dataset.i18n];
@@ -30,13 +38,18 @@ async function setLang(lang) {
     const btn = document.getElementById('lang-toggle');
     if (btn) btn.textContent = lang === 'en' ? 'ID' : 'EN';
     applyStaticTranslations();
-    // Re-render JS-driven sections that have cached data
-    if (_dataCache.strava)       renderStrava(_dataCache.strava);
-    if (_dataCache.sports)       renderSports(_dataCache.sports);
-    if (_dataCache.github)       renderGitHub(_dataCache.github);
-    if (_dataCache.hackerrank)   renderHackerRank(_dataCache.hackerrank);
-    if (_dataCache.competitions) renderCompetitions(_dataCache.competitions);
-    if (_dataCache.research)     renderResearch(_dataCache.research);
+    // Re-render all JS-driven sections with cached data
+    if (_dataCache.experience)    renderExperience(_dataCache.experience);
+    if (_dataCache.skills)        renderSkills(_dataCache.skills);
+    if (_dataCache.capabilities)  renderCapabilities(_dataCache.capabilities);
+    if (_dataCache.projects)      renderProjects(_dataCache.projects);
+    if (_dataCache.competitions)  renderCompetitions(_dataCache.competitions);
+    if (_dataCache.research)      renderResearch(_dataCache.research);
+    if (_dataCache.qualification) renderQualification(_dataCache.qualification);
+    if (_dataCache.strava)        renderStrava(_dataCache.strava);
+    if (_dataCache.sports)        renderSports(_dataCache.sports);
+    if (_dataCache.github)        renderGitHub(_dataCache.github);
+    if (_dataCache.hackerrank)    renderHackerRank(_dataCache.hackerrank);
 }
 
 async function initI18n() {
@@ -295,10 +308,11 @@ function renderExperience(data){
     }, {});
     const html = Object.values(grouped).map(group => {
         const rolesHTML = group.roles.map(r => {
-            const bullets = r.summary.split(/\.\s+(?=[A-Z])/).filter(Boolean);
+            const summaryText = loc(r.summary);
+            const bullets = summaryText.split(/\.\s+(?=[A-ZÀ-ɏ])/).filter(Boolean);
             const summaryHTML = bullets.length > 1
                 ? `<ul class="exp_role_bullets">${bullets.map(b=>`<li>${b.replace(/\.$/,'')}</li>`).join('')}</ul>`
-                : `<p class="exp_role_summary">${r.summary}</p>`;
+                : `<p class="exp_role_summary">${summaryText}</p>`;
             return `
             <div class="exp_role">
                 <div class="exp_role_header">
@@ -466,7 +480,7 @@ function renderSkills(data){
     wrap.innerHTML = data.map(cat => `
         <div class="skill_card reveal">
             <i class="${cat.iconClass} skill_icon"></i>
-            <h3 class="skill_title">${cat.title}</h3>
+            <h3 class="skill_title">${loc(cat.title)}</h3>
             <ul class="skill_list">
                 ${cat.items.map(it=>`<li><span>${it.name}</span></li>`).join('')}
             </ul>
@@ -480,8 +494,8 @@ function renderCapabilities(data){
     wrap.innerHTML = data.map(item => `
         <div class="capability_card reveal">
             <i class="${item.iconClass} capability_icon"></i>
-            <h3 class="capability_title">${item.title}</h3>
-            <p class="capability_desc">${item.description}</p>
+            <h3 class="capability_title">${loc(item.title)}</h3>
+            <p class="capability_desc">${loc(item.description)}</p>
         </div>
     `).join('');
 }
@@ -511,7 +525,7 @@ function renderProjects(data){
             </div>
             <div class="proj_body">
                 <h3 class="proj_title">${p.title}</h3>
-                <p class="proj_desc">${p.description}</p>
+                <p class="proj_desc">${loc(p.description)}</p>
                 ${techHTML ? `<div class="proj_tags">${techHTML}</div>` : ''}
                 ${contribHTML}
                 ${assocHTML}
@@ -556,7 +570,7 @@ function renderCompetitions(data){
             </div>
             <div class="award_body">
                 <h3 class="award_title">${c.title}</h3>
-                <p class="award_desc">${c.description}</p>
+                <p class="award_desc">${loc(c.description)}</p>
                 ${c.link ? `<a href="${c.link}" target="_blank" class="award_link"><i class="uil uil-external-link-alt"></i> ${t('competition.viewCert','View Certificate')}</a>` : ''}
             </div>
         </div>`;
@@ -585,7 +599,7 @@ function renderResearch(data){
                     ${publisherHTML}
                 </div>
                 <h3 class="research_paper_title">${r.title}</h3>
-                <p class="research_paper_desc">${r.description}</p>
+                <p class="research_paper_desc">${loc(r.description)}</p>
                 ${authorsHTML}
                 ${r.link ? `<a href="${r.link}" target="_blank" class="research_link">${t('research.readMore','Read Full Paper')} <i class="uil uil-arrow-right"></i></a>` : ''}
             </div>
@@ -640,7 +654,7 @@ function renderQualification(data){
             const isRight = idx % 2 === 1;
             const isLast  = idx === items.length - 1;
             const detailsHTML = (item.details || []).map(d =>
-                `<div class="qual_detail"><i class="uil ${d.icon}"></i> ${d.text}</div>`
+                `<div class="qual_detail"><i class="uil ${d.icon}"></i> ${loc(d.text)}</div>`
             ).join('');
             const contentBlock = `
                 <h3 class="qualification_title">${item.title}</h3>
