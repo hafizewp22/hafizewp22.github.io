@@ -1,5 +1,24 @@
 {
-  "all_run_totals":    { "count": 0, "distance": 0, "moving_time": 0, "elevation_gain": 0 },
-  "ytd_run_totals":    { "count": 0, "distance": 0, "moving_time": 0, "elevation_gain": 0 },
-  "recent_run_totals": { "count": 0, "distance": 0, "moving_time": 0, "elevation_gain": 0 }
+  "all_run_totals": {
+    "count": 58,
+    "distance": 250724.60000000003,
+    "moving_time": 107026,
+    "elapsed_time": 116902,
+    "elevation_gain": 693.1999999999999
+  },
+  "ytd_run_totals": {
+    "count": 46,
+    "distance": 205139,
+    "moving_time": 84482.0,
+    "elapsed_time": 91610.0,
+    "elevation_gain": 507.5
+  },
+  "recent_run_totals": {
+    "count": 6,
+    "distance": 37868.1,
+    "moving_time": 15210,
+    "elapsed_time": 15943,
+    "elevation_gain": 114.3,
+    "achievement_count": 0
+  }
 }
