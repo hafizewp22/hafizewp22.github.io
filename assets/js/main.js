@@ -555,7 +555,7 @@ function renderCompetitions(data){
     const wrap = document.getElementById('competitions-wrapper');
     if(!wrap) return;
     const rankIcon = desc => {
-        const d = desc.toLowerCase();
+        const d = loc(desc).toLowerCase();
         if(d.includes('1st')||d.includes('first')||d.includes('gold')) return {icon:'uil-trophy',cls:'award--gold',label:t('competition.rank1','1st Place')};
         if(d.includes('2nd')||d.includes('second')||d.includes('silver')) return {icon:'uil-trophy',cls:'award--silver',label:t('competition.rank2','2nd Place')};
         if(d.includes('3rd')||d.includes('third')||d.includes('bronze')) return {icon:'uil-medal',cls:'award--bronze',label:t('competition.rank3','3rd Place')};
