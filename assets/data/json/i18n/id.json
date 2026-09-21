@@ -11,6 +11,9 @@
   "nav.certificate": "Sertifikat",
   "nav.running": "Lari",
 
+  "home.title": "Halo, Saya Hafiz",
+  "home.subtitle": "Full Stack Developer",
+  "home.description": "3+ tahun membangun aplikasi web finansial & enterprise menggunakan Golang, Vue.js, dan MySQL. Menghadirkan sistem absensi, evaluasi KPI, transaksi reksa dana, dan alur kerja dokumen berverifikasi QR di sektor fintech dan telekomunikasi.",
   "home.cta": "Hubungi Saya",
   "home.scroll": "Gulir ke bawah",
 

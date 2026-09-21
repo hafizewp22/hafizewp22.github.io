@@ -11,6 +11,9 @@
   "nav.certificate": "Certificate",
   "nav.running": "Running",
 
+  "home.title": "Hi, I'm Hafiz",
+  "home.subtitle": "Full Stack Developer",
+  "home.description": "3+ years building financial & enterprise web applications using Golang, Vue.js, and MySQL. Delivered attendance systems, KPI evaluation, mutual fund transactions, and QR-verified document workflows across fintech and telecom sectors.",
   "home.cta": "Contact Me",
   "home.scroll": "Scroll down",
 
