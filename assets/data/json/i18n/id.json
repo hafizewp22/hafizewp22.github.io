@@ -70,6 +70,10 @@
 
   "certificate.title": "Sertifikat",
   "certificate.subtitle": "Kredensial & Pembelajaran",
+  "cert.cat.Training": "Pelatihan",
+  "cert.cat.Certification": "Sertifikasi",
+  "cert.cat.Academic": "Akademik",
+  "cert.cat.Online Course": "Kursus Online",
 
   "running.title": "Lari",
   "running.subtitle": "Olahraga & Event Marathon",

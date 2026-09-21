@@ -70,6 +70,10 @@
 
   "certificate.title": "Certificate",
   "certificate.subtitle": "Credentials & Learning",
+  "cert.cat.Training": "Training",
+  "cert.cat.Certification": "Certification",
+  "cert.cat.Academic": "Academic",
+  "cert.cat.Online Course": "Online Course",
 
   "running.title": "Running",
   "running.subtitle": "Sport & Marathon Events",

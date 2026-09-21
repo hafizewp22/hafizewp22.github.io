@@ -39,17 +39,19 @@ async function setLang(lang) {
     if (btn) btn.textContent = lang === 'en' ? 'ID' : 'EN';
     applyStaticTranslations();
     // Re-render all JS-driven sections with cached data
-    if (_dataCache.experience)    renderExperience(_dataCache.experience);
-    if (_dataCache.skills)        renderSkills(_dataCache.skills);
-    if (_dataCache.capabilities)  renderCapabilities(_dataCache.capabilities);
-    if (_dataCache.projects)      renderProjects(_dataCache.projects);
-    if (_dataCache.competitions)  renderCompetitions(_dataCache.competitions);
-    if (_dataCache.research)      renderResearch(_dataCache.research);
-    if (_dataCache.qualification) renderQualification(_dataCache.qualification);
-    if (_dataCache.strava)        renderStrava(_dataCache.strava);
-    if (_dataCache.sports)        renderSports(_dataCache.sports);
-    if (_dataCache.github)        renderGitHub(_dataCache.github);
-    if (_dataCache.hackerrank)    renderHackerRank(_dataCache.hackerrank);
+    if (_dataCache.experience)       renderExperience(_dataCache.experience);
+    if (_dataCache.skills)           renderSkills(_dataCache.skills);
+    if (_dataCache.capabilities)     renderCapabilities(_dataCache.capabilities);
+    if (_dataCache.projects)         renderProjects(_dataCache.projects);
+    if (_dataCache.competitions)     renderCompetitions(_dataCache.competitions);
+    if (_dataCache.research)         renderResearch(_dataCache.research);
+    if (_dataCache.qualification)    renderQualification(_dataCache.qualification);
+    if (_dataCache.strava)           renderStrava(_dataCache.strava);
+    if (_dataCache.sports)           renderSports(_dataCache.sports);
+    if (_dataCache.github)           renderGitHub(_dataCache.github);
+    if (_dataCache.hackerrank)       renderHackerRank(_dataCache.hackerrank);
+    if (_dataCache.certifications)   renderCertifications(_dataCache.certifications);
+    if (_dataCache.events)           renderEvents(_dataCache.events);
 }
 
 async function initI18n() {
@@ -627,7 +629,7 @@ function renderEvents(data){
                 <img src="${e.image}" alt="${e.title}" class="cert_img" loading="lazy"/>
                 <div class="cert_overlay">
                     <span class="cert_zoom_icon"><i class="uil uil-search-plus"></i></span>
-                    <p class="cert_overlay_desc">${e.description}</p>
+                    <p class="cert_overlay_desc">${loc(e.description)}</p>
                 </div>
             </div>
             <div class="cert_info"><h4 class="cert_title">${e.title}</h4></div>
@@ -637,7 +639,7 @@ function renderEvents(data){
         <div class="cert_group">
             <div class="cert_group_header">
                 <i class="uil ${categoryIcon[cat] || 'uil-folder'} cert_group_icon"></i>
-                <h3 class="cert_group_title">${cat}</h3>
+                <h3 class="cert_group_title">${t('cert.cat.' + cat, cat)}</h3>
                 <span class="cert_group_count">${groups[cat].length}</span>
             </div>
             <div class="certs_grid_inner">${groups[cat].map(certCard).join('')}</div>

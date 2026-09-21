@@ -1,79 +1,79 @@
 [
   {
     "title": "Scalable Web Services with Golang (Hacktiv8 DTS)",
-    "description": "Training scholarship: Go language, OOP, Testing, PostgreSQL, Middleware, scalable services.",
+    "description": {"en": "Training scholarship: Go language, OOP, Testing, PostgreSQL, Middleware, scalable services.", "id": "Beasiswa pelatihan: bahasa Go, OOP, Testing, PostgreSQL, Middleware, layanan skalabel."},
     "image": "assets/img/Certificate20.png",
     "category": "Training"
   },
   {
     "title": "Training - Database Design and Programming with SQL",
-    "description": "Digital Talent Scholarship (FGA) 2021 project: bookstore database design & implementation.",
+    "description": {"en": "Digital Talent Scholarship (FGA) 2021 project: bookstore database design & implementation.", "id": "Proyek Digital Talent Scholarship (FGA) 2021: desain dan implementasi database toko buku."},
     "image": "assets/img/Certificate13.png",
     "category": "Training"
   },
   {
     "title": "Web Development Path (Node.js)",
-    "description": "Join a 3-day workshop whose theme is Online Website Builder with Progate.",
+    "description": {"en": "Join a 3-day workshop whose theme is Online Website Builder with Progate.", "id": "Mengikuti workshop 3 hari bertema Membangun Website Online dengan Progate."},
     "image": "assets/img/Certificate4.png",
     "category": "Training"
   },
   {
     "title": "IC3 GS5 Key Applications (Office 2016)",
-    "description": "Microsoft Office 2016 expertise certification in IC3 GS5 Key Application.",
+    "description": {"en": "Microsoft Office 2016 expertise certification in IC3 GS5 Key Application.", "id": "Sertifikasi keahlian Microsoft Office 2016 dalam IC3 GS5 Key Application."},
     "image": "assets/img/Certificate7.png",
     "category": "Certification"
   },
   {
     "title": "Problem Solving (Basic)",
-    "description": "Data Structures (Arrays, Strings) and Algorithms (Sorting, Searching).",
+    "description": {"en": "Data Structures (Arrays, Strings) and Algorithms (Sorting, Searching).", "id": "Struktur Data (Array, String) dan Algoritma (Pengurutan, Pencarian)."},
     "image": "assets/img/Certificate6.png",
     "category": "Certification"
   },
   {
     "title": "Java (Basic)",
-    "description": "It covers basic topics in Java such as classes, data structures, inheritance, exception handling (Java 7/8).",
+    "description": {"en": "It covers basic topics in Java such as classes, data structures, inheritance, exception handling (Java 7/8).", "id": "Mencakup topik dasar Java seperti kelas, struktur data, pewarisan, dan penanganan pengecualian (Java 7/8)."},
     "image": "assets/img/Certificate5.png",
     "category": "Certification"
   },
   {
     "title": "SQL (Basic)",
-    "description": "Simple queries, relationships, and aggregators.",
+    "description": {"en": "Simple queries, relationships, and aggregators.", "id": "Kueri sederhana, relasi, dan agregator."},
     "image": "assets/img/Certificate10.png",
     "category": "Certification"
   },
   {
     "title": "React (Basic)",
-    "description": "Basic Routing, Rendering Elements, Component State, Events, ES6, Form Validation.",
+    "description": {"en": "Basic Routing, Rendering Elements, Component State, Events, ES6, Form Validation.", "id": "Routing dasar, Rendering Elemen, State Komponen, Event, ES6, Validasi Form."},
     "image": "assets/img/Certificate21.png",
     "category": "Certification"
   },
   {
     "title": "Database Design at Oracle Academy",
-    "description": "Materials, quizzes and exams about database design documentation.",
+    "description": {"en": "Materials, quizzes and exams about database design documentation.", "id": "Materi, kuis, dan ujian tentang dokumentasi desain database."},
     "image": "assets/img/Certificate15.png",
     "category": "Academic"
   },
   {
     "title": "Database Programming with SQL at Oracle Academy",
-    "description": "Classifying data and simplifying data identification & display using SQL.",
+    "description": {"en": "Classifying data and simplifying data identification & display using SQL.", "id": "Mengklasifikasikan data dan menyederhanakan identifikasi & tampilan data menggunakan SQL."},
     "image": "assets/img/Certificate14.png",
     "category": "Academic"
   },
   {
     "title": "React - The Complete Guide (incl Hooks, React Router, Redux)",
-    "description": "React.js from scratch: Hooks, Redux, Routing, Animations, Next.js and more.",
+    "description": {"en": "React.js from scratch: Hooks, Redux, Routing, Animations, Next.js and more.", "id": "React.js dari dasar: Hooks, Redux, Routing, Animasi, Next.js dan lainnya."},
     "image": "assets/img/Certificate21.png",
     "category": "Online Course"
   },
   {
     "title": "Learn to Code with Python",
-    "description": "Beginner to professional course: 400+ videos covering Python fundamentals.",
+    "description": {"en": "Beginner to professional course: 400+ videos covering Python fundamentals.", "id": "Kursus dari pemula hingga profesional: 400+ video mencakup dasar-dasar Python."},
     "image": "assets/img/Certificate17.png",
     "category": "Online Course"
   },
   {
     "title": "HTML Course - Sololearn",
-    "description": "Hands-on exercises building web pages with HTML.",
+    "description": {"en": "Hands-on exercises building web pages with HTML.", "id": "Latihan langsung membangun halaman web dengan HTML."},
     "image": "assets/img/Certificate19.png",
     "category": "Online Course"
   }
