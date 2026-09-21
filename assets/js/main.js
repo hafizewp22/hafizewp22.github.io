@@ -625,8 +625,10 @@ function renderHackerRank(data){
         </span>`).join('');
     wrap.innerHTML = `
         <div class="hr_header">
-            <img src="https://hrcdn.net/fcore/assets/brand/logo-new-white-green-a5cb16a0f4.svg"
-                 class="hr_logo" alt="HackerRank" onerror="this.outerHTML='<span class=\'hr_logo_text\'>HackerRank</span>'"/>
+            <svg class="hr_logo" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" aria-label="HackerRank" width="32" height="32">
+                <rect width="100" height="100" rx="15" fill="#fff"/>
+                <text x="50" y="72" font-family="Arial,sans-serif" font-size="72" font-weight="900" text-anchor="middle" fill="#1ba94c">H</text>
+            </svg>
             <div class="hr_header_info">
                 <span class="hr_username">@${data.username}</span>
                 <span class="hr_title">${data.title}</span>

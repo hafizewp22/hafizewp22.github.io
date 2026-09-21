@@ -1210,7 +1210,7 @@ body.dark-theme .pill-btn .pill-icon{background:rgba(255,255,255,.9);color:var(-
 /*— HackerRank Widget —*/
 .hr_widget{margin-top:1.5rem;background:var(--surface-alt);border:1px solid var(--border-color);border-radius:1.25rem;overflow:hidden;}
 .hr_header{display:flex;align-items:center;gap:.85rem;padding:1rem 1.25rem;background:#1ba94c;flex-wrap:wrap;}
-.hr_logo{height:1.5rem;flex-shrink:0;filter:brightness(0) invert(1);}
+.hr_logo{width:2rem;height:2rem;flex-shrink:0;border-radius:.4rem;}
 .hr_logo_text{color:#fff;font-weight:800;font-size:1rem;flex-shrink:0;}
 .hr_header_info{display:flex;flex-direction:column;flex:1;min-width:0;}
 .hr_username{color:#fff;font-weight:700;font-size:.9rem;}
