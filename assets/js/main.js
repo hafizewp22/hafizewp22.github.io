@@ -611,7 +611,14 @@ function renderBrands(data){
 }
 
 /*==================== SPORTS / RUNNING ====================*/
-function renderGitHub(data){
+const GH_LANG_COLORS = {
+    JavaScript:'#f1e05a', TypeScript:'#3178c6', Go:'#00ADD8', PHP:'#4F5D95',
+    Python:'#3572A5', HTML:'#e34c26', CSS:'#563d7c', Vue:'#41b883',
+    Kotlin:'#A97BFF', Java:'#b07219', 'C++':'#f34b7d', C:'#555555',
+    Shell:'#89e051', Dockerfile:'#384d54'
+};
+
+async function renderGitHub(data){
     const wrap = document.getElementById('github-widget');
     if(!wrap) return;
     const joined = new Date(data.created_at).getFullYear();
@@ -651,7 +658,35 @@ function renderGitHub(data){
                 <span class="gh_stat_key">Joined</span>
             </div>
         </div>
+        <div class="gh_repos" id="gh-repos-list">
+            <span class="gh_repos_loading">Loading repositories…</span>
+        </div>
     `;
+    try {
+        const res = await fetch('https://api.github.com/users/hafizewp22/repos?sort=updated&per_page=6&type=owner');
+        const repos = await res.json();
+        document.getElementById('gh-repos-list').innerHTML = repos
+            .filter(r => !r.fork)
+            .slice(0, 6)
+            .map(r => {
+                const langDot = r.language
+                    ? `<span class="gh_lang_dot" style="background:${GH_LANG_COLORS[r.language]||'#ccc'}"></span>${r.language}`
+                    : '';
+                const stars = r.stargazers_count ? `<span class="gh_repo_stat"><i class="uil uil-star"></i> ${r.stargazers_count}</span>` : '';
+                const forks = r.forks_count     ? `<span class="gh_repo_stat"><i class="uil uil-code-branch"></i> ${r.forks_count}</span>` : '';
+                return `
+                <a class="gh_repo_card" href="${r.html_url}" target="_blank" rel="noopener">
+                    <div class="gh_repo_name"><i class="uil uil-book-alt"></i> ${r.name}</div>
+                    ${r.description ? `<p class="gh_repo_desc">${r.description}</p>` : ''}
+                    <div class="gh_repo_meta">
+                        ${langDot ? `<span class="gh_repo_lang">${langDot}</span>` : ''}
+                        ${stars}${forks}
+                    </div>
+                </a>`;
+            }).join('');
+    } catch(e){
+        document.getElementById('gh-repos-list').innerHTML = '';
+    }
 }
 
 function renderHackerRank(data){
