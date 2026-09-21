@@ -1,0 +1,90 @@
+{
+  "education": [
+    {
+      "title": "Software Engineering",
+      "subtitle": "SMK Informatika Kota Serang",
+      "period": "Jul 2016 – Jun 2019",
+      "details": [
+        { "icon": "uil-medal",    "text": "Grade: 81 / 100" },
+        { "icon": "uil-book-alt", "text": "Thesis: Design of Student Data Processing Information System at Matthayom Watnairong School" },
+        { "icon": "uil-star",     "text": "Extracurricular: Graphic Design, Student Exchange" }
+      ]
+    },
+    {
+      "title": "Visiting Student",
+      "subtitle": "Matthayom Watnairong School, Thailand",
+      "period": "Jul 2018 – Jul 2018",
+      "details": [
+        { "icon": "uil-globe", "text": "Student exchange — Indonesia's representative, partially funded & hosted by Matthayom Watnairong School" }
+      ]
+    },
+    {
+      "title": "Bachelor of Science, Computer Science",
+      "subtitle": "Bina Nusantara University (BINUS)",
+      "period": "Sep 2019 – Apr 2023",
+      "details": [
+        { "icon": "uil-medal",     "text": "GPA: 3.35 / 4.00 · Streaming: Database Technology" },
+        { "icon": "uil-book-alt",  "text": "Thesis: Design Of Web-Based Learning Media To Improve Learning Systems In Poris Indah Tangerang High School" },
+        { "icon": "uil-users-alt", "text": "Activities: BNCC · BNEC · Student Mentor (Friends Care Community)" }
+      ]
+    }
+  ],
+  "organization": [
+    {
+      "title": "Member",
+      "subtitle": "Bina Nusantara English Club (BNEC)",
+      "period": "2019 – 2020",
+      "details": []
+    },
+    {
+      "title": "Learning & Teaching Division Activist",
+      "subtitle": "Bina Nusantara Computer Club (BNCC)",
+      "period": "Jul 2019 – Aug 2021",
+      "details": [
+        { "icon": "uil-check-circle", "text": "MC & Public Speaking Training" },
+        { "icon": "uil-check-circle", "text": "Student Leadership Exercises (LKMM)" },
+        { "icon": "uil-check-circle", "text": "Website Design Training (HTML & CSS)" }
+      ]
+    },
+    {
+      "title": "Learning and Training Staff (LnT)",
+      "subtitle": "Bina Nusantara Computer Club (BNCC)",
+      "period": "Aug 2020 – Feb 2022",
+      "details": [
+        { "icon": "uil-check-circle", "text": "Curriculum & Teaching: planning class materials and schedules" },
+        { "icon": "uil-check-circle", "text": "IT Event Committee: planning & executing organization events" },
+        { "icon": "uil-check-circle", "text": "Attendance Management for training participants" }
+      ]
+    }
+  ],
+  "volunteering": [
+    {
+      "title": "Student Mentor",
+      "subtitle": "Friends Care Community · BINUS University",
+      "period": "Oct 2021 – Feb 2022",
+      "details": [
+        { "icon": "uil-heart",      "text": "Peduli Sahabat Kampus — community focused on disability awareness and special needs support on campus" },
+        { "icon": "uil-check-circle", "text": "Provided guidance and academic support to students with special needs throughout their college journey" },
+        { "icon": "uil-check-circle", "text": "Helped create an inclusive campus environment through direct mentoring and assistance" }
+      ]
+    },
+    {
+      "title": "Contact Person — BNCC CSR 2020",
+      "subtitle": "Bina Nusantara Computer Club",
+      "period": "Oct 2020 – Nov 2020",
+      "details": [
+        { "icon": "uil-check-circle", "text": "BNCC CSR 2020 in collaboration with Yayasan Anak Bangsa (GO-JEK)" },
+        { "icon": "uil-check-circle", "text": "Managed participant documentation and registration data for the seminar" },
+        { "icon": "uil-check-circle", "text": "Event proceeds donated to Yayasan Anak Bangsa for education in Indonesia" }
+      ]
+    },
+    {
+      "title": "Competition Proctor",
+      "subtitle": "ICPC – International Collegiate Programming Contest",
+      "period": "Nov 2021",
+      "details": [
+        { "icon": "uil-check-circle", "text": "Fully monitored the assigned team during ICPC Asia Jakarta Regional 2021" }
+      ]
+    }
+  ]
+}

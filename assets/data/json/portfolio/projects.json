@@ -1,0 +1,88 @@
+[
+  {
+    "title": "My Gram",
+    "period": "Apr 2023",
+    "description": "Photo sharing app — store photos and comment on others' photos. Built with Golang REST API and PostgreSQL.",
+    "technologies": ["Golang", "PostgreSQL", "REST API"],
+    "image": "assets/img/portfolio5.png",
+    "github": "https://github.com/hafizewp22"
+  },
+  {
+    "title": "Thesis: Poris Indah Smart School (POINSS)",
+    "period": "Sep 2022 – Jan 2023",
+    "description": "Web-based e-learning platform for admin, teachers, and students of Poris Indah Tangerang High School.",
+    "technologies": ["Laravel 9", "MySQL", "Tailwind CSS", "PHP"],
+    "contributors": ["Meliska", "Seviera"],
+    "association": "BINUS University",
+    "image": "assets/img/portfolio13.png",
+    "github": "https://github.com/hafizewp22/Poris-Indah-Smart-School-POINSS"
+  },
+  {
+    "title": "BOM Tiket",
+    "period": "Nov 2021 – Feb 2022",
+    "description": "Online cinema ticket ordering app built with Kotlin on Android Studio, using Firebase as the backend.",
+    "technologies": ["Kotlin", "Android Studio", "Firebase"],
+    "contributors": ["Fajar Muhammad", "Karen"],
+    "image": "assets/img/portfolio6.png"
+  },
+  {
+    "title": "Happy Book Store",
+    "period": "Jan 2022 – Feb 2022",
+    "description": "Library management website — Web Programming course project using PHP Laravel 8 and MySQL.",
+    "technologies": ["Laravel 8", "PHP", "MySQL"],
+    "association": "BINUS University",
+    "image": "assets/img/portfolio11.png",
+    "github": "https://github.com/hafizelfiawedoputra/HappyBookStoreUTS"
+  },
+  {
+    "title": "BukaWarung",
+    "period": "Sep 2021 – Jan 2022",
+    "description": "Daily needs shopping web app. Built with PHP Laravel 8 and MySQL.",
+    "technologies": ["Laravel 8", "PHP", "MySQL", "Bootstrap"],
+    "contributors": ["Tristania", "Seviera"],
+    "association": "BINUS University",
+    "image": "assets/img/portfolio2.png",
+    "link": "https://projectbukawarung01.000webhostapp.com/",
+    "linkLabel": "Demo"
+  },
+  {
+    "title": "Indonesian COVID-19 Vaccination Data",
+    "period": "Mar 2021 – May 2021",
+    "description": "Data dashboard tracking COVID-19 vaccination progress in Indonesia using Google Data Studio.",
+    "technologies": ["Google Data Studio", "Data Analysis"],
+    "contributors": ["Asqal"],
+    "association": "BINUS University",
+    "image": "assets/img/portfolio10.png"
+  },
+  {
+    "title": "Face Mask Detection",
+    "period": "Dec 2020 – Apr 2021",
+    "description": "Real-time face mask detection using Python deep learning, built and trained on Google Colab.",
+    "technologies": ["Python", "Deep Learning", "Google Colab", "Jupyter Notebook"],
+    "image": "assets/img/portfolio8.jpg"
+  },
+  {
+    "title": "UI/UX – BestDoc App",
+    "period": "2022",
+    "description": "Vet booking & pet hotel app UI/UX design — covers booking flows, pet profiles, and appointment management.",
+    "technologies": ["Figma", "UI/UX Design"],
+    "image": "assets/img/portfolio9.png",
+    "figma": "https://www.figma.com/community/file/1030133560500275500"
+  },
+  {
+    "title": "Clothing Store Cashier Application",
+    "period": "Feb 2019 – Jun 2019",
+    "description": "Desktop cashier app for a clothing store — manages inventory, transactions, and sales reporting.",
+    "technologies": ["MySQL", "JavaScript", "VB.NET"],
+    "image": "assets/img/portfolio3.png",
+    "github": "https://github.com/hafizelfiawedoputra/Aplikasi-Kasir-Toko-Pakaian"
+  },
+  {
+    "title": "Quiz Tokoh Dunia",
+    "period": "2022",
+    "description": "Android quiz game about world figures. Built with Android Studio as a personal project.",
+    "technologies": ["Android Studio", "Java"],
+    "image": "assets/img/portfolio4.png",
+    "github": "https://github.com/hafizelfiawedoputra/quiztokohdunia"
+  }
+]

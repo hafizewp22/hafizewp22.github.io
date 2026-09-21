@@ -1,0 +1,41 @@
+name: Sync Strava Stats
+
+on:
+  schedule:
+    - cron: '0 2 * * *'   # Every day at 02:00 UTC
+  workflow_dispatch:        # Allow manual trigger from GitHub Actions tab
+
+jobs:
+  strava-sync:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Refresh Strava access token
+        id: auth
+        run: |
+          RESPONSE=$(curl -s -X POST https://www.strava.com/oauth/token \
+            -F client_id=${{ secrets.STRAVA_CLIENT_ID }} \
+            -F client_secret=${{ secrets.STRAVA_CLIENT_SECRET }} \
+            -F refresh_token=${{ secrets.STRAVA_REFRESH_TOKEN }} \
+            -F grant_type=refresh_token)
+          echo "access_token=$(echo $RESPONSE | jq -r '.access_token')" >> $GITHUB_OUTPUT
+
+      - name: Fetch athlete stats from Strava API
+        run: |
+          curl -s \
+            -H "Authorization: Bearer ${{ steps.auth.outputs.access_token }}" \
+            "https://www.strava.com/api/v3/athletes/26880798/stats" \
+            | jq '{all_run_totals, ytd_run_totals, recent_run_totals}' \
+            > assets/data/json/achievements/strava.json
+
+      - name: Commit and push updated stats
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add assets/data/json/achievements/strava.json
+          git diff --staged --quiet || (git commit -m "chore: sync strava stats [skip ci]" && git push)

@@ -242,20 +242,29 @@ function renderExperience(data){
         return acc;
     }, {});
     const html = Object.values(grouped).map(group => {
-        const rolesHTML = group.roles.map(r => `
+        const rolesHTML = group.roles.map(r => {
+            const bullets = r.summary.split(/\.\s+(?=[A-Z])/).filter(Boolean);
+            const summaryHTML = bullets.length > 1
+                ? `<ul class="exp_role_bullets">${bullets.map(b=>`<li>${b.replace(/\.$/,'')}</li>`).join('')}</ul>`
+                : `<p class="exp_role_summary">${r.summary}</p>`;
+            return `
             <div class="exp_role">
                 <div class="exp_role_header">
                     <h3 class="exp_role_title">${r.role}</h3>
                     <span class="exp_role_period">${r.start} – ${r.end}</span>
                 </div>
-                <p class="exp_role_summary">${r.summary}</p>
+                ${summaryHTML}
                 <div class="exp_tags">${(r.technologies||[]).map(t=>`<span class="exp_tag">${t}</span>`).join('')}</div>
-            </div>
-        `).join('');
+            </div>`;
+        }).join('');
+        const initials = group.company.replace(/^PT\.\s*/i,'').trim().split(/\s+/).filter(w=>/^[a-zA-Z]/.test(w)).slice(0,2).map(w=>w[0]).join('').toUpperCase();
+        const logoHTML = group.logo
+            ? `<img src="${group.logo}" alt="${group.company} logo" class="exp_company_logo" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"/><div class="exp_company_logo exp_company_logo_fallback" style="display:none">${initials}</div>`
+            : `<div class="exp_company_logo exp_company_logo_fallback">${initials}</div>`;
         return `
         <div class="exp_company_block reveal">
             <div class="exp_company_header">
-                ${group.logo ? `<img src="${group.logo}" alt="${group.company} logo" class="exp_company_logo"/>` : ''}
+                ${logoHTML}
                 <div class="exp_company_meta">
                     <h2 class="exp_company_name">${group.company}</h2>
                     <span class="exp_company_location">${group.location}</span>
@@ -271,15 +280,18 @@ function renderExperience(data){
 
 async function initDynamicSections(){
     const tasks = [
-        { path: 'assets/data/json/experience.json', render: renderExperience, selector: '#experience-container', name: 'experience' },
-        { path: 'assets/data/json/skills.json', render: renderSkills, selector: '#skills-cards', name: 'skills' },
-        { path: 'assets/data/json/capabilities.json', render: renderCapabilities, selector: '#capabilities-grid', name: 'capabilities' },
-        { path: 'assets/data/json/projects.json', render: renderProjects, selector: '#projects-wrapper', name: 'projects' },
-        { path: 'assets/data/json/certifications.json', render: renderCertifications, selector: '#certifications-wrapper', name: 'certifications' },
-        { path: 'assets/data/json/competitions.json', render: renderCompetitions, selector: '#competitions-wrapper', name: 'competitions' },
-        { path: 'assets/data/json/research.json', render: renderResearch, selector: '#research-wrapper', name: 'research' },
-        { path: 'assets/data/json/events.json', render: renderEvents, selector: '#events-wrapper', name: 'events' },
-        { path: 'assets/data/json/brands.json', render: renderBrands, selector: '#brands-track', name: 'brands' }
+        { path: 'assets/data/json/career/experience.json',      render: renderExperience,    selector: '#experience-container',   name: 'experience'     },
+        { path: 'assets/data/json/about/skills.json',           render: renderSkills,         selector: '#skills-cards',           name: 'skills'         },
+        { path: 'assets/data/json/about/capabilities.json',     render: renderCapabilities,   selector: '#capabilities-grid',      name: 'capabilities'   },
+        { path: 'assets/data/json/portfolio/projects.json',     render: renderProjects,       selector: '#projects-wrapper',       name: 'projects'       },
+        { path: 'assets/data/json/achievements/certifications.json', render: renderCertifications, selector: '#certifications-wrapper', name: 'certifications' },
+        { path: 'assets/data/json/achievements/competitions.json',   render: renderCompetitions,   selector: '#competitions-wrapper',   name: 'competitions'   },
+        { path: 'assets/data/json/portfolio/research.json',     render: renderResearch,       selector: '#research-wrapper',       name: 'research'       },
+        { path: 'assets/data/json/achievements/events.json',    render: renderEvents,         selector: '#events-wrapper',         name: 'events'         },
+        { path: 'assets/data/json/brands.json',                 render: renderBrands,         selector: '#brands-track',           name: 'brands'         },
+        { path: 'assets/data/json/career/qualification.json',   render: renderQualification,  selector: '#education',              name: 'qualification'  },
+        { path: 'assets/data/json/achievements/sports.json',   render: renderSports,         selector: '#running-wrapper',        name: 'sports'         },
+        { path: 'assets/data/json/achievements/strava.json',   render: renderStrava,         selector: '#strava-stats',           name: 'strava'         }
     ];
     const results = await Promise.allSettled(tasks.map(t => loadJSON(t.path)));
     let anySuccess = false;
@@ -400,7 +412,7 @@ function renderSkills(data){
             <i class="${cat.iconClass} skill_icon"></i>
             <h3 class="skill_title">${cat.title}</h3>
             <ul class="skill_list">
-                ${cat.items.map(it=>`<li>${it.name} (${it.level})</li>`).join('')}
+                ${cat.items.map(it=>`<li><span>${it.name}</span></li>`).join('')}
             </ul>
         </div>
     `).join('');
@@ -421,17 +433,36 @@ function renderCapabilities(data){
 function renderProjects(data){
     const wrap = document.getElementById('projects-wrapper');
     if(!wrap) return;
-    wrap.innerHTML = data.map(p => `
-        <div class="portfolio_content project_card grid swiper-slide reveal">
-            <div class="card_media"><img src="${p.image}" alt="${p.title}" class="portfolio_img" /></div>
-            <div class="portfolio_data">
-                <span class="card_tag tag-project">Project</span>
-                <h3 class="portfolio_title">${p.title}</h3>
-                <p class="portfolio_description">${p.description}</p>
-                ${p.link ? `<a href="${p.link}" target="_blank" class="button button--flex button--small portfolio_button">${p.linkLabel || 'View'}<i class="uil uil-arrow-right button_icon"></i></a>` : ''}
+    wrap.innerHTML = data.map(p => {
+        const techHTML = (p.technologies||[]).map(t=>`<span class="proj_tag">${t}</span>`).join('');
+        const contribHTML = p.contributors?.length ? `<p class="proj_contributors"><i class="uil uil-users-alt"></i> ${p.contributors.join(' · ')}</p>` : '';
+        const assocHTML = p.association ? `<span class="proj_assoc"><i class="uil uil-university"></i> ${p.association}</span>` : '';
+        const platformLinks = [];
+        if(p.github)  platformLinks.push(`<a href="${p.github}"  target="_blank" class="proj_link proj_link--github"><i class="uil uil-github-alt"></i> GitHub</a>`);
+        if(p.gitlab)  platformLinks.push(`<a href="${p.gitlab}"  target="_blank" class="proj_link proj_link--gitlab"><i class="uil uil-gitlab"></i> GitLab</a>`);
+        if(p.figma)   platformLinks.push(`<a href="${p.figma}"   target="_blank" class="proj_link proj_link--figma"><i class="uil uil-vector-square"></i> Figma</a>`);
+        if(p.link){
+            const lbl = p.linkLabel || 'Demo';
+            const ico = lbl.toLowerCase().includes('demo') ? 'uil-play-circle' : 'uil-external-link-alt';
+            platformLinks.push(`<a href="${p.link}" target="_blank" class="proj_link proj_link--demo"><i class="uil ${ico}"></i> ${lbl}</a>`);
+        }
+        const linksHTML = platformLinks.join('');
+        return `
+        <div class="proj_card swiper-slide reveal">
+            <div class="proj_img_wrap">
+                <img src="${p.image}" alt="${p.title}" class="proj_img" loading="lazy" onerror="this.src='assets/img/project.png'"/>
+                ${p.period ? `<span class="proj_period">${p.period}</span>` : ''}
             </div>
-        </div>
-    `).join('');
+            <div class="proj_body">
+                <h3 class="proj_title">${p.title}</h3>
+                <p class="proj_desc">${p.description}</p>
+                ${techHTML ? `<div class="proj_tags">${techHTML}</div>` : ''}
+                ${contribHTML}
+                ${assocHTML}
+                <div class="proj_links">${linksHTML}</div>
+            </div>
+        </div>`;
+    }).join('');
 }
 
 function renderCertifications(data){
@@ -452,49 +483,122 @@ function renderCertifications(data){
 function renderCompetitions(data){
     const wrap = document.getElementById('competitions-wrapper');
     if(!wrap) return;
-    wrap.innerHTML = data.map(c => `
-        <div class="certificate_content competition_card grid swiper-slide reveal">
-            <div class="card_media"><img src="${c.image}" alt="${c.title}" class="portfolio_img" /></div>
-            <div class="certificate_data">
-                <span class="card_tag tag-competition">Competition</span>
-                <h3 class="certificate_title">${c.title}</h3>
-                <p class="certificate_description">${c.description}</p>
-                ${c.link ? `<a href="${c.link}" target="_blank" class="button button--flex button--small certificate_button">View<i class="uil uil-arrow-right button_icon"></i></a>` : ''}
+    const rankIcon = desc => {
+        const d = desc.toLowerCase();
+        if(d.includes('1st')||d.includes('first')||d.includes('gold')) return {icon:'uil-trophy',cls:'award--gold',label:'1st Place'};
+        if(d.includes('2nd')||d.includes('second')||d.includes('silver')) return {icon:'uil-trophy',cls:'award--silver',label:'2nd Place'};
+        if(d.includes('3rd')||d.includes('third')||d.includes('bronze')) return {icon:'uil-medal',cls:'award--bronze',label:'3rd Place'};
+        return {icon:'uil-award',cls:'award--participant',label:'Participant'};
+    };
+    wrap.innerHTML = data.map(c => {
+        const rank = rankIcon(c.description);
+        return `
+        <div class="award_card reveal">
+            <div class="award_img_wrap">
+                <img src="${c.image}" alt="${c.title}" class="award_img" loading="lazy"/>
+                <div class="award_badge ${rank.cls}"><i class="uil ${rank.icon}"></i> ${rank.label}</div>
             </div>
-        </div>
-    `).join('');
+            <div class="award_body">
+                <h3 class="award_title">${c.title}</h3>
+                <p class="award_desc">${c.description}</p>
+                ${c.link ? `<a href="${c.link}" target="_blank" class="award_link"><i class="uil uil-external-link-alt"></i> View Certificate</a>` : ''}
+            </div>
+        </div>`;
+    }).join('');
 }
 
 function renderResearch(data){
     const wrap = document.getElementById('research-wrapper');
     if(!wrap) return;
-    wrap.innerHTML = data.map(r => `
-        <div class="certificate_content research_card grid swiper-slide reveal">
-            <div class="card_media"><img src="${r.image}" alt="${r.title}" class="portfolio_img" /></div>
-            <div class="certificate_data">
-                <span class="card_tag tag-research">Research</span>
-                <h3 class="certificate_title">${r.title}</h3>
-                <p class="certificate_description">${r.year || ''}</p>
-                ${r.link ? `<a href="${r.link}" target="_blank" class="button button--flex button--small certificate_button">View<i class="uil uil-arrow-right button_icon"></i></a>` : ''}
+    wrap.innerHTML = data.map(r => {
+        const authorsHTML = r.authors?.length
+            ? `<div class="research_authors"><i class="uil uil-users-alt"></i> ${r.authors.join(' · ')}</div>`
+            : '';
+        const publisherHTML = r.publisher
+            ? `<span class="research_publisher"><i class="uil uil-university"></i> ${r.publisher}</span>`
+            : '';
+        return `
+        <div class="research_paper reveal">
+            <div class="research_paper_thumb">
+                <img src="${r.image}" alt="${r.title}" loading="lazy"/>
             </div>
-        </div>
-    `).join('');
+            <div class="research_paper_body">
+                <div class="research_paper_meta">
+                    <span class="research_tag"><i class="uil uil-book-open"></i> Research Paper</span>
+                    ${r.year ? `<span class="research_year">${r.year}</span>` : ''}
+                    ${publisherHTML}
+                </div>
+                <h3 class="research_paper_title">${r.title}</h3>
+                <p class="research_paper_desc">${r.description}</p>
+                ${authorsHTML}
+                ${r.link ? `<a href="${r.link}" target="_blank" class="research_link">Read Full Paper <i class="uil uil-arrow-right"></i></a>` : ''}
+            </div>
+        </div>`;
+    }).join('');
 }
 
 function renderEvents(data){
     const wrap = document.getElementById('events-wrapper');
     if(!wrap) return;
     wrap.innerHTML = data.map(e => `
-        <div class="certificate_content events_card grid swiper-slide reveal">
-            <div class="card_media"><img src="${e.image}" alt="${e.title}" class="portfolio_img" /></div>
-            <div class="certificate_data">
-                <span class="card_tag tag-event">Event</span>
-                <h3 class="certificate_title">${e.title}</h3>
-                <p class="certificate_description">${e.description}</p>
+        <div class="cert_item reveal" role="button" tabindex="0"
+             data-img="${e.image}" data-caption="${e.title}"
+             onclick="openLightbox(this)" onkeydown="if(event.key==='Enter')openLightbox(this)">
+            <div class="cert_img_wrap">
+                <img src="${e.image}" alt="${e.title}" class="cert_img" loading="lazy"/>
+                <div class="cert_overlay">
+                    <span class="cert_zoom_icon"><i class="uil uil-search-plus"></i></span>
+                    <p class="cert_overlay_desc">${e.description}</p>
+                </div>
+            </div>
+            <div class="cert_info">
+                <h4 class="cert_title">${e.title}</h4>
             </div>
         </div>
     `).join('');
 }
+
+function renderQualification(data){
+    const tabMap = { education: 'education', organization: 'work', volunteering: 'volunteering' };
+    Object.entries(tabMap).forEach(([key, id]) => {
+        const wrap = document.getElementById(id);
+        if(!wrap) return;
+        const items = data[key] || [];
+        wrap.innerHTML = items.map((item, idx) => {
+            const isRight = idx % 2 === 1;
+            const isLast  = idx === items.length - 1;
+            const detailsHTML = (item.details || []).map(d =>
+                `<div class="qual_detail"><i class="uil ${d.icon}"></i> ${d.text}</div>`
+            ).join('');
+            const contentBlock = `
+                <h3 class="qualification_title">${item.title}</h3>
+                <span class="qualification_subtitle">${item.subtitle}</span>
+                <div class="qualification_calender"><i class="uil uil-calendar-alt"></i> ${item.period}</div>
+                ${detailsHTML}`;
+            const rounderBlock = `<span class="qualification_rounder"></span>${isLast ? '' : '<span class="qualification_line"></span>'}`;
+            return isRight
+                ? `<div class="qualification_data"><div></div><div>${rounderBlock}</div><div>${contentBlock}</div></div>`
+                : `<div class="qualification_data"><div>${contentBlock}</div><div>${rounderBlock}</div></div>`;
+        }).join('');
+    });
+}
+
+function openLightbox(el){
+    const lb = document.getElementById('lightbox');
+    document.getElementById('lightbox-img').src = el.dataset.img;
+    document.getElementById('lightbox-caption').textContent = el.dataset.caption;
+    lb.classList.add('lightbox--open');
+    document.body.classList.add('no-scroll');
+}
+function closeLightbox(){
+    document.getElementById('lightbox').classList.remove('lightbox--open');
+    document.body.classList.remove('no-scroll');
+}
+document.addEventListener('DOMContentLoaded',()=>{
+    document.getElementById('lightbox-close')?.addEventListener('click', closeLightbox);
+    document.getElementById('lightbox-backdrop')?.addEventListener('click', closeLightbox);
+    document.addEventListener('keydown', e => { if(e.key==='Escape') closeLightbox(); });
+});
 
 function renderBrands(data){
     const track = document.getElementById('brands-track');
@@ -503,6 +607,110 @@ function renderBrands(data){
     const sequence = data.map(b => `<div class=\"brands_item\"><img src=\"${b.logo}\" alt=\"${b.alt || b.name}\" /></div>`).join('');
     track.innerHTML = sequence + sequence; // duplicate
 }
+
+/*==================== SPORTS / RUNNING ====================*/
+function renderStrava(data){
+    const wrap = document.getElementById('strava-stats');
+    if(!wrap) return;
+    const all    = data.all_run_totals    || {};
+    const ytd    = data.ytd_run_totals    || {};
+    const recent = data.recent_run_totals || {};
+    const km  = m => (m / 1000).toFixed(1);
+    if(!all.count){ wrap.closest('.strava_widget')?.classList.add('strava_widget--loading'); return; }
+    wrap.innerHTML = `
+        <div class="strava_stat_card">
+            <span class="strava_stat_val">${all.count}</span>
+            <span class="strava_stat_key">Total Runs</span>
+        </div>
+        <div class="strava_stat_card">
+            <span class="strava_stat_val">${km(all.distance)} <small>km</small></span>
+            <span class="strava_stat_key">Total Distance</span>
+        </div>
+        <div class="strava_stat_card">
+            <span class="strava_stat_val">${Math.round(all.elevation_gain)} <small>m</small></span>
+            <span class="strava_stat_key">Total Elevation</span>
+        </div>
+        <div class="strava_stat_card strava_stat_card--accent">
+            <span class="strava_stat_val">${ytd.count}</span>
+            <span class="strava_stat_key">Runs This Year</span>
+        </div>
+        <div class="strava_stat_card strava_stat_card--accent">
+            <span class="strava_stat_val">${km(ytd.distance)} <small>km</small></span>
+            <span class="strava_stat_key">Distance This Year</span>
+        </div>
+        <div class="strava_stat_card strava_stat_card--accent">
+            <span class="strava_stat_val">${recent.count}</span>
+            <span class="strava_stat_key">Runs (4 Weeks)</span>
+        </div>
+    `;
+}
+
+function renderSports(data){
+    const wrap = document.getElementById('running-wrapper');
+    if(!wrap) return;
+    wrap.innerHTML = data.map(r => {
+        const color      = r.color      || 'var(--first-color)';
+        const colorLight = r.colorLight || 'var(--first-color-lighter)';
+        return `
+        <div class="run_card reveal" style="--run-color:${color};--run-color-light:${colorLight}">
+            <div class="run_header">
+                <div>
+                    <span class="run_category">${r.category}</span>
+                    <h3 class="run_event">${r.event}</h3>
+                    <span class="run_meta"><i class="uil uil-calendar-alt"></i> ${r.year} &nbsp;·&nbsp; <i class="uil uil-map-marker"></i> ${r.location}</span>
+                </div>
+                <div class="run_bib">#${r.bibNumber}</div>
+            </div>
+            <div class="run_time_wrap">
+                <span class="run_time_label">Finish Time</span>
+                <span class="run_time">${r.finishTime}</span>
+                <span class="run_pace">${r.pace}</span>
+            </div>
+            <div class="run_stats">
+                <div class="run_stat">
+                    <span class="run_stat_val">${r.overallRank}</span>
+                    <span class="run_stat_label">of ${r.overallTotal}</span>
+                    <span class="run_stat_key">Overall</span>
+                </div>
+                <div class="run_stat_divider"></div>
+                <div class="run_stat">
+                    <span class="run_stat_val">${r.genderRank}</span>
+                    <span class="run_stat_label">of ${r.genderTotal}</span>
+                    <span class="run_stat_key">Gender</span>
+                </div>
+            </div>
+            <div class="run_links">
+                <button class="run_btn run_btn--cert" onclick="openPdfModal('${r.event}','${r.certificateUrl}')">
+                    <i class="uil uil-file-alt"></i> Certificate
+                </button>
+                <a class="run_btn run_btn--result" href="${r.resultUrl}" target="_blank" rel="noopener">
+                    <i class="uil uil-chart-bar"></i> Results
+                </a>
+            </div>
+        </div>`;
+    }).join('');
+}
+
+function openPdfModal(title, url){
+    const modal = document.getElementById('pdf-modal');
+    document.getElementById('pdf-modal-title').textContent = title;
+    document.getElementById('pdf-modal-frame').src = url;
+    document.getElementById('pdf-modal-link').href = url;
+    document.getElementById('pdf-modal-fallback-link').href = url;
+    modal.classList.add('pdf_modal--open');
+    document.body.classList.add('no-scroll');
+}
+function closePdfModal(){
+    const modal = document.getElementById('pdf-modal');
+    modal.classList.remove('pdf_modal--open');
+    document.getElementById('pdf-modal-frame').src = '';
+    document.body.classList.remove('no-scroll');
+}
+document.addEventListener('DOMContentLoaded',()=>{
+    document.getElementById('pdf-modal-close')?.addEventListener('click', closePdfModal);
+    document.getElementById('pdf-modal-backdrop')?.addEventListener('click', closePdfModal);
+    document.addEventListener('keydown', e => { if(e.key==='Escape') closePdfModal(); });
+});
 
 /*==================== STATS UPDATE ====================*/
 function updateStats(loaded){

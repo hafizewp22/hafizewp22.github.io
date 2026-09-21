@@ -1,0 +1,99 @@
+[
+  {
+    "title": "Front-End",
+    "iconClass": "uil uil-window",
+    "items": [
+      {"name": "HTML5",        "level": "Advanced"},
+      {"name": "CSS",          "level": "Advanced"},
+      {"name": "SASS/SCSS",    "level": "Intermediate"},
+      {"name": "JavaScript",   "level": "Intermediate"},
+      {"name": "jQuery",       "level": "Intermediate"},
+      {"name": "ReactJS",      "level": "Intermediate"},
+      {"name": "Vue.js",       "level": "Intermediate"},
+      {"name": "Tailwind CSS", "level": "Intermediate"},
+      {"name": "Bootstrap",    "level": "Advanced"},
+      {"name": "Node.js",      "level": "Basic"}
+    ]
+  },
+  {
+    "title": "Back-End",
+    "iconClass": "uil uil-server",
+    "items": [
+      {"name": "Golang",    "level": "Intermediate"},
+      {"name": "PHP",       "level": "Intermediate"},
+      {"name": "Laravel",   "level": "Intermediate"},
+      {"name": "Python",    "level": "Intermediate"},
+      {"name": "Node.js",   "level": "Basic"},
+      {"name": "REST API",  "level": "Intermediate"}
+    ]
+  },
+  {
+    "title": "Databases",
+    "iconClass": "uil uil-database",
+    "items": [
+      {"name": "MySQL",           "level": "Intermediate"},
+      {"name": "PostgreSQL",      "level": "Intermediate"},
+      {"name": "SQL Server",      "level": "Basic"},
+      {"name": "Oracle Database", "level": "Basic"},
+      {"name": "Firebase",        "level": "Basic"},
+      {"name": "Database Design", "level": "Intermediate"}
+    ]
+  },
+  {
+    "title": "Cloud & DevOps",
+    "iconClass": "uil uil-cloud",
+    "items": [
+      {"name": "Microsoft Azure",    "level": "Basic"},
+      {"name": "AWS",                "level": "Basic"},
+      {"name": "Docker",             "level": "Basic"},
+      {"name": "Kong API Gateway",   "level": "Basic"},
+      {"name": "Linux (Ubuntu)",     "level": "Intermediate"}
+    ]
+  },
+  {
+    "title": "Tools & Platforms",
+    "iconClass": "uil uil-wrench",
+    "items": [
+      {"name": "Git",              "level": "Intermediate"},
+      {"name": "GitHub",           "level": "Intermediate"},
+      {"name": "GitLab",           "level": "Intermediate"},
+      {"name": "Postman API",      "level": "Intermediate"},
+      {"name": "Figma",            "level": "Intermediate"},
+      {"name": "Google Analytics", "level": "Basic"},
+      {"name": "ArcGIS",           "level": "Basic"},
+      {"name": "Trello",           "level": "Intermediate"},
+      {"name": "Jira",             "level": "Intermediate"}
+    ]
+  },
+  {
+    "title": "Programming Languages",
+    "iconClass": "uil uil-brackets-curly",
+    "items": [
+      {"name": "Golang", "level": "Intermediate"},
+      {"name": "Python", "level": "Intermediate"},
+      {"name": "PHP",    "level": "Intermediate"},
+      {"name": "Java",   "level": "Basic"},
+      {"name": "Kotlin", "level": "Basic"},
+      {"name": "C",      "level": "Basic"},
+      {"name": "C++",    "level": "Basic"}
+    ]
+  },
+  {
+    "title": "Professional Skills",
+    "iconClass": "uil uil-users-alt",
+    "items": [
+      {"name": "Teamwork",        "level": "Strong"},
+      {"name": "Time Management", "level": "Strong"},
+      {"name": "Leadership",      "level": "Developing"},
+      {"name": "Problem Solving", "level": "Strong"}
+    ]
+  },
+  {
+    "title": "Languages",
+    "iconClass": "uil uil-comment-dots",
+    "items": [
+      {"name": "Indonesian", "level": "Fluent"},
+      {"name": "English",    "level": "Elementary"}
+    ]
+  }
+]

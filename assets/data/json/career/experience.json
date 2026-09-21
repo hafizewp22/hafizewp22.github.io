@@ -1,0 +1,52 @@
+[
+  {
+    "role": "Full Stack Developer | Software Engineer",
+    "company": "PT. Purwanto Asset Management",
+    "location": "Jakarta, Indonesia",
+    "start": "Jul 2024",
+    "end": "Present",
+    "summary": "Building and owning internal financial and operational applications in a lean 2–3 person engineering team. Built Employee Attendance & Leave, Meeting Room Booking, and KPI Evaluation systems. Developed a secure Client/Nasabah & Mutual Fund Transaction system (100–250 clients) with access control, audit logging, and compliance workflows. Built QR Code-based Document Verification with OTP authentication, automated Document & File Management, and integrated Microsoft 365 / Entra ID authentication. Contributed to security evaluation for on-premise to Azure migration.",
+    "technologies": ["Golang", "Vue.js", "MySQL", "Python", "REST API", "Docker", "Microsoft Azure", "Node.js", "Linux", "Kong API Gateway", "Tailwind CSS"],
+    "logo": "https://purwanto.co.id/img/purwanto_logo.webp"
+  },
+  {
+    "role": "Programmer",
+    "company": "PT. Purwanto Asset Management",
+    "location": "Jakarta, Indonesia",
+    "start": "Jan 2024",
+    "end": "Jul 2024",
+    "summary": "Developed business applications supporting corporate operations, customer onboarding, and mutual fund transactions. Enhanced company website (Career, Webinar, Blog, Product) with Google Analytics. Built the RDO (Reksa Dana Online) app for client data management and mutual fund transaction validation. Developed a Corporate Information System integrated with VIDA Digital Signature. Implemented identity verification (email, NIK, facial recognition via Dukcapil). Conducted stock market analysis using Bloomberg and Python.",
+    "technologies": ["Golang", "Vue.js", "MySQL", "PHP", "Laravel", "JavaScript", "Python", "REST API", "Google Analytics", "Bloomberg", "VIDA API", "Tailwind CSS"],
+    "logo": "https://purwanto.co.id/img/purwanto_logo.webp"
+  },
+  {
+    "role": "Commissioner, Software Engineer",
+    "company": "Siaphub (PT. Swijaya Fokus Multisukses)",
+    "location": "Tangerang, Indonesia",
+    "start": "Nov 2023",
+    "end": "Apr 2025",
+    "summary": "Contributed to SiapHub's web application development focusing on front-end engineering, reporting workflows, testing, and internal project management tools. Built React.js-based CRUD applications and reporting features with data export. Translated UI/UX designs into responsive web interfaces. Performed unit and integration testing across features, databases, and APIs. Built project management tools for monitoring progress across individual and team-based projects.",
+    "technologies": ["React.js", "JavaScript", "PostgreSQL", "REST API", "AWS", "Tailwind CSS"],
+    "logo": "https://logo.clearbit.com/siaphub.com"
+  },
+  {
+    "role": "Software Engineer",
+    "company": "PT. Digerati Atomic Indonesia",
+    "location": "Tangerang, Indonesia",
+    "start": "Jun 2023",
+    "end": "Sep 2023",
+    "summary": "Developed a Sales Force Automation (SFA) platform for retail/FMCG, contributing across front-end and back-end. Built and enhanced SIP features for managing sales activities, customer data, orders, deliveries, and field operations. Worked across Laravel and Go stacks; developed backend APIs and integrated them with the web front-end. Also contributed to a retail company website.",
+    "technologies": ["Golang", "Laravel", "PHP", "PostgreSQL", "MySQL", "REST API", "Tailwind CSS", "Git"],
+    "logo": "https://media.licdn.com/dms/image/v2/D4E0BAQFEpfr_15NwDA/company-logo_200_200/company-logo_200_200/0/1725352821056/atomicindonesia_logo?e=1791417600&v=beta&t=kbUIiZFa-0GIdsWdyiGukyNVYdnGqb4tejlbWIiGgOk"
+  },
+  {
+    "role": "Web Developer Internship",
+    "company": "Telkom Indonesia",
+    "location": "Jakarta, Indonesia",
+    "start": "Mar 2022",
+    "end": "Feb 2023",
+    "summary": "Contributed to development and maintenance of internal web applications using React.js with GIS and API-based data sources. Enhanced SIIS and IBAM web applications; integrated ArcGIS API into SIIS 4.0 for location-based visualization. Integrated API-driven data into IBAM. Developed front-end for CMS Survey Microdemand. Collaborated across teams to maintain existing apps and deliver new functionality.",
+    "technologies": ["React.js", "JavaScript", "ArcGIS", "GIS", "REST API", "HTML5", "CSS", "SASS", "Tailwind CSS", "Figma", "Git"],
+    "logo": "https://media.licdn.com/dms/image/v2/C4D0BAQGVLh28SyAv-g/company-logo_200_200/company-logo_200_200/0/1631315215307?e=1791417600&v=beta&t=G0jQoelbE-tczbWAF6Dm5PbIWAzrev8ITBLNwASM0tI"
+  }
+]
