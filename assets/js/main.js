@@ -625,10 +625,7 @@ function renderHackerRank(data){
         </span>`).join('');
     wrap.innerHTML = `
         <div class="hr_header">
-            <svg class="hr_logo" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" aria-label="HackerRank" width="32" height="32">
-                <rect width="100" height="100" rx="15" fill="#fff"/>
-                <text x="50" y="72" font-family="Arial,sans-serif" font-size="72" font-weight="900" text-anchor="middle" fill="#1ba94c">H</text>
-            </svg>
+            <img src="https://cdn.simpleicons.org/hackerrank/ffffff" class="hr_logo" width="28" height="28" alt="HackerRank"/>
             <div class="hr_header_info">
                 <span class="hr_username">@${data.username}</span>
                 <span class="hr_title">${data.title}</span>
