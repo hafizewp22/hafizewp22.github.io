@@ -292,7 +292,8 @@ async function initDynamicSections(){
         { path: 'assets/data/json/career/qualification.json',   render: renderQualification,  selector: '#education',              name: 'qualification'  },
         { path: 'assets/data/json/achievements/sports.json',   render: renderSports,         selector: '#running-wrapper',        name: 'sports'         },
         { path: 'assets/data/json/achievements/strava.json',   render: renderStrava,         selector: '#strava-stats',           name: 'strava'         },
-        { path: 'assets/data/json/about/hackerrank.json',      render: renderHackerRank,     selector: '#hr-widget',              name: 'hackerrank'     }
+        { path: 'assets/data/json/about/hackerrank.json',      render: renderHackerRank,     selector: '#hr-widget',              name: 'hackerrank'     },
+        { path: 'https://api.github.com/users/hafizewp22',    render: renderGitHub,         selector: '#github-widget',          name: 'github'         }
     ];
     const results = await Promise.allSettled(tasks.map(t => loadJSON(t.path)));
     let anySuccess = false;
@@ -610,6 +611,49 @@ function renderBrands(data){
 }
 
 /*==================== SPORTS / RUNNING ====================*/
+function renderGitHub(data){
+    const wrap = document.getElementById('github-widget');
+    if(!wrap) return;
+    const joined = new Date(data.created_at).getFullYear();
+    wrap.innerHTML = `
+        <div class="gh_header">
+            <div class="gh_brand">
+                <img src="https://cdn.simpleicons.org/github/ffffff" class="gh_logo" width="22" height="22" alt="GitHub"
+                     onerror="this.style.display='none'"/>
+                <span class="gh_brand_name">GitHub</span>
+            </div>
+            <div class="gh_header_meta">
+                <span class="gh_username">@${data.login}</span>
+                ${data.bio ? `<span class="gh_dot">·</span><span class="gh_bio">${data.bio}</span>` : ''}
+            </div>
+            <a class="gh_profile_link" href="${data.html_url}" target="_blank" rel="noopener">
+                View Profile <i class="uil uil-external-link-alt"></i>
+            </a>
+        </div>
+        <div class="gh_body">
+            <div class="gh_stat">
+                <span class="gh_stat_val">${data.public_repos}</span>
+                <span class="gh_stat_key">Repositories</span>
+            </div>
+            <div class="gh_stat_divider"></div>
+            <div class="gh_stat">
+                <span class="gh_stat_val">${data.followers}</span>
+                <span class="gh_stat_key">Followers</span>
+            </div>
+            <div class="gh_stat_divider"></div>
+            <div class="gh_stat">
+                <span class="gh_stat_val">${data.following}</span>
+                <span class="gh_stat_key">Following</span>
+            </div>
+            <div class="gh_stat_divider"></div>
+            <div class="gh_stat">
+                <span class="gh_stat_val">${joined}</span>
+                <span class="gh_stat_key">Joined</span>
+            </div>
+        </div>
+    `;
+}
+
 function renderHackerRank(data){
     const wrap = document.getElementById('hr-widget');
     if(!wrap) return;

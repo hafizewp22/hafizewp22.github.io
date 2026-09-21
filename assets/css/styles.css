@@ -1207,6 +1207,28 @@ body.dark-theme .pill-btn .pill-icon{background:rgba(255,255,255,.9);color:var(-
 .portfolio_data,.certificate_data{position:relative;z-index:2;}
 
 /*==================== RUNNING / SPORTS ====================*/
+/*— Coding Profiles —*/
+.coding_profiles{display:grid;grid-template-columns:1fr 1fr;gap:1.25rem;margin-top:1.5rem;}
+@media(max-width:640px){.coding_profiles{grid-template-columns:1fr;}}
+
+/*— GitHub Widget —*/
+.gh_widget{background:var(--surface-alt);border:1px solid var(--border-color);border-radius:1.25rem;overflow:hidden;}
+.gh_header{display:flex;align-items:center;gap:1rem;padding:1rem 1.25rem;background:#24292e;flex-wrap:wrap;}
+.gh_brand{display:flex;align-items:center;gap:.55rem;flex-shrink:0;}
+.gh_logo{width:1.5rem;height:1.5rem;flex-shrink:0;}
+.gh_brand_name{color:#fff;font-weight:800;font-size:1rem;}
+.gh_header_meta{display:flex;align-items:center;gap:.4rem;flex:1;min-width:0;flex-wrap:wrap;}
+.gh_username{color:#fff;font-weight:600;font-size:.82rem;}
+.gh_dot{color:rgba(255,255,255,.4);}
+.gh_bio{color:rgba(255,255,255,.7);font-size:.75rem;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;max-width:160px;}
+.gh_profile_link{font-size:.72rem;color:#fff;text-decoration:none;display:inline-flex;align-items:center;gap:.25rem;font-weight:600;white-space:nowrap;background:rgba(255,255,255,.15);padding:.35rem .75rem;border-radius:2rem;transition:background .2s;}
+.gh_profile_link:hover{background:rgba(255,255,255,.28);}
+.gh_body{display:flex;align-items:center;justify-content:space-around;padding:1.1rem 1rem;}
+.gh_stat{display:flex;flex-direction:column;align-items:center;gap:.2rem;}
+.gh_stat_val{font-size:1.4rem;font-weight:800;color:var(--title-color);}
+.gh_stat_key{font-size:.6rem;text-transform:uppercase;letter-spacing:.4px;color:var(--text-color-light);}
+.gh_stat_divider{width:1px;height:2.5rem;background:var(--border-color);}
+
 /*— HackerRank Widget —*/
 .hr_widget{margin-top:1.5rem;background:var(--surface-alt);border:1px solid var(--border-color);border-radius:1.25rem;overflow:hidden;}
 .hr_header{display:flex;align-items:center;gap:1rem;padding:1rem 1.25rem;background:#1ba94c;flex-wrap:wrap;}
