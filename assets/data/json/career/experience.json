@@ -36,7 +36,7 @@
       "id": "Berkontribusi pada pengembangan aplikasi web SiapHub dengan fokus pada rekayasa front-end, alur pelaporan, pengujian, dan alat manajemen proyek internal. Membangun aplikasi CRUD berbasis React.js dan fitur pelaporan dengan ekspor data. Menerjemahkan desain UI/UX menjadi antarmuka web responsif. Melakukan pengujian unit dan integrasi pada fitur, database, dan API. Membangun alat manajemen proyek untuk memantau kemajuan proyek individu dan tim."
     },
     "technologies": ["React.js", "JavaScript", "PostgreSQL", "REST API", "AWS", "Tailwind CSS"],
-    "logo": "https://logo.clearbit.com/siaphub.com"
+    "logo": "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23e11d48'/%3E%3Ctext x='32' y='44' font-size='30' font-family='Poppins, sans-serif' font-weight='600' fill='%23ffffff' text-anchor='middle'%3ES%3C/text%3E%3C/svg%3E"
   },
   {
     "role": "Software Engineer",

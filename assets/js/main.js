@@ -280,6 +280,101 @@ themeButton.addEventListener('click', () => {
     localStorage.setItem('selected-icon', getCurrentIcon())
 })
 
+/*==================== ACCESSIBILITY CONTROLS ====================*/
+const textSizeUpBtn = document.getElementById('text-size-up')
+const textSizeDownBtn = document.getElementById('text-size-down')
+const textResetBtn = document.getElementById('text-reset')
+let textScale = localStorage.getItem('accessibility-text-scale') === 'small' ? -1 : (localStorage.getItem('accessibility-text-scale') === 'large' ? 1 : 0)
+
+function applyTextScale(scale){
+    textScale = scale
+    document.documentElement.classList.toggle('accessibility-text-small', scale === -1)
+    document.documentElement.classList.toggle('accessibility-text-large', scale === 1)
+    localStorage.setItem('accessibility-text-scale', scale === -1 ? 'small' : (scale === 1 ? 'large' : 'normal'))
+}
+
+if (textSizeUpBtn) textSizeUpBtn.addEventListener('click', () => {
+    const next = textScale === 1 ? 0 : 1
+    applyTextScale(next)
+    textSizeUpBtn.setAttribute('aria-pressed', String(next !== 0))
+})
+if (textSizeDownBtn) textSizeDownBtn.addEventListener('click', () => {
+    const next = textScale === -1 ? 0 : -1
+    applyTextScale(next)
+    textSizeDownBtn.setAttribute('aria-pressed', String(next !== 0))
+})
+applyTextScale(textScale)
+
+/*==================== ACCESSIBILITY MENU WIDGET CONTROLS ====================*/
+const a11yWidgetToggle = document.getElementById('a11y-widget-toggle')
+const a11yPanel = document.getElementById('a11y-panel')
+const a11yPanelClose = document.getElementById('a11y-panel-close')
+let a11yOpen = false
+
+function openA11yPanel(){
+    a11yOpen = true
+    if (a11yPanel) a11yPanel.classList.add('open')
+    if (a11yWidgetToggle) a11yWidgetToggle.setAttribute('aria-expanded', 'true')
+}
+function closeA11yPanel(){
+    a11yOpen = false
+    if (a11yPanel) a11yPanel.classList.remove('open')
+    if (a11yWidgetToggle) a11yWidgetToggle.setAttribute('aria-expanded', 'false')
+}
+if (a11yWidgetToggle) a11yWidgetToggle.addEventListener('click', () => { openA11yPanel() })
+if (a11yPanelClose) a11yPanelClose.addEventListener('click', () => { closeA11yPanel() })
+document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && a11yOpen) closeA11yPanel() })
+document.addEventListener('click', (e) => {
+    if (!a11yOpen) return
+    if (a11yPanel && a11yPanel.contains(e.target)) return
+    if (a11yWidgetToggle && (e.target === a11yWidgetToggle || a11yWidgetToggle.contains(e.target))) return
+    closeA11yPanel()
+})
+
+const a11ySwitchIds = [
+    'a11y-toggle-keyboard',
+    'a11y-toggle-anim',
+    'a11y-toggle-contrast',
+    'a11y-toggle-text-up',
+    'a11y-toggle-text-down',
+    'a11y-toggle-font',
+    'a11y-toggle-title',
+    'a11y-toggle-focus',
+]
+
+a11ySwitchIds.forEach(id => {
+    const chk = document.getElementById(id)
+    if (!chk) return
+    chk.addEventListener('change', () => {
+        switch (id) {
+            case 'a11y-toggle-keyboard':
+                document.documentElement.classList.toggle('a11y-keyboard', chk.checked)
+                break
+            case 'a11y-toggle-anim':
+                document.documentElement.classList.toggle('a11y-no-anim', chk.checked)
+                break
+            case 'a11y-toggle-contrast':
+                document.documentElement.classList.toggle('a11y-contrast', chk.checked)
+                break
+            case 'a11y-toggle-text-up':
+                applyTextScale(chk.checked ? 1 : 0)
+                break
+            case 'a11y-toggle-text-down':
+                applyTextScale(chk.checked ? -1 : 0)
+                break
+            case 'a11y-toggle-font':
+                document.documentElement.classList.toggle('accessibility-font-easy', chk.checked)
+                break
+            case 'a11y-toggle-title':
+                document.documentElement.classList.toggle('a11y-highlight', chk.checked)
+                break
+            case 'a11y-toggle-focus':
+                document.documentElement.classList.toggle('a11y-focus', chk.checked)
+                break
+        }
+    })
+})
+
 /*==================== REVEAL ON SCROLL (Modern) ====================*/
 const revealEls = document.querySelectorAll('.reveal')
 const revealObserver = new IntersectionObserver((entries) => {
