@@ -1,17 +1,17 @@
 {
   "all_run_totals": {
-    "count": 69,
-    "distance": 334137.9,
-    "moving_time": 141535,
-    "elapsed_time": 154302,
-    "elevation_gain": 854.1
+    "count": 70,
+    "distance": 341131.4,
+    "moving_time": 144927,
+    "elapsed_time": 157734,
+    "elevation_gain": 876.4
   },
   "ytd_run_totals": {
-    "count": 57,
-    "distance": 288553,
-    "moving_time": 118991.0,
-    "elapsed_time": 129010.0,
-    "elevation_gain": 668.4
+    "count": 58,
+    "distance": 295546,
+    "moving_time": 122383.0,
+    "elapsed_time": 132442.0,
+    "elevation_gain": 690.7
   },
   "recent_run_totals": {
     "count": 6,
